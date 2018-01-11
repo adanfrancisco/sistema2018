@@ -1,0 +1,42 @@
+.roboto{font-family: Roboto, sans-serif;}
+.pt{font-family: 'PT Sans Narrow', sans-serif;}
+.saira{font-family: 'Saira Extra Condensed', sans-serif;}
+.bold{font-weight: 700;}
+.color-white{color: white;}
+.color-grey{color: rgb(120,120,120);}
+.color-darkgrey{color: rgb(80,80,80);}
+.color-lightgrey{color: rgb(180,180,180);}
+.color-red{color: rgb(244, 95, 66);}
+.color-blue{color: #19B5FE;}
+.color-green{color: rgb(116, 168, 60);}
+.align-left{text-align: left; !important}
+.align-right{text-align: right; !important}
+.align-center{text-align: center; !important}
+.text-hidden{color: rgba(0,0,0,0);}
+.no-decoration{text-decoration: none;}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+.middle-big-text{
+    position: absolute;
+    box-sizing: border-box;
+    height: calc(100% - 50px); width: calc(100% - 15px);
+    display: flex;
+    align-items: center;
+}
+.middle-big-text>p{
+    display: block;
+    margin: auto;
+    text-align: center;
+    font: 0.8em Roboto;
+    color: rgba(0,0,0,.3);
+}
+b, h1, h2, h3, h4, h5, h6{
+    font-weight: 550;
+}

@@ -1,0 +1,15 @@
+
+<!-- Libreria jQuery -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+ 
+<script type="text/javascript">
+	$(document).ready(function()
+	    {
+	    $("#boton").on( "click", function() {	 
+	        $('#target').toggle();
+	         });
+	    });
+</script>
+ 
+<input id="target" type="button" value="ESTE BOTÓN APARECE Y DESAPARECE">
+<input id="boton" type="button" value="toggle()">

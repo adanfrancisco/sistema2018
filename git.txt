@@ -1,0 +1,10 @@
+git quick status
+CTRL + MAYUS + S = git add -A
+git quick add
+git quick repo
+
+git push current branch (origin)
+
+para eliminar (sudo su)
+cd carpeta/
+rm -rf .git

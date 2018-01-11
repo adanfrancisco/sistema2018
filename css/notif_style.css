@@ -1,0 +1,91 @@
+.notif-panel{
+    position: fixed;
+    bottom: 10px;
+	right: 20px;
+	padding-left: 20px;
+	text-align: right;
+	z-index: 10;
+    max-height: calc(100% - 20px);
+    overflow-y: auto;
+}
+.notif{
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    right: 0px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    font-size: 1em;
+    animation: get-in .2s ease-out;
+	text-align: left;
+    cursor: default;
+    user-select: none;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    overflow-y: auto;
+}
+.notif-link{
+    position: relative;
+    margin: 0px 5px 0px 5px;
+    float: right;
+    text-align: right;
+    color: white;
+    cursor: pointer;
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+.notif-link:hover{
+    color: rgb(230,230,230);
+}
+@keyframes get-in{
+    0%{
+        -webkit-transform: translate(0, 100%);
+           -moz-transform: translate(0, 100%);
+            -ms-transform: translate(0, 100%);
+             -o-transform: translate(0, 100%);
+                transform: translate(0, 100%);
+		opacity: 0;
+    }
+    100%{
+        -webkit-transform: translate(0, 0);
+           -moz-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+             -o-transform: translate(0, 0);
+                transform: translate(0, 0);
+		opacity: 1;
+    }
+}
+
+.notif-confirmation-panel{
+	position: fixed;
+	box-sizing: border-box;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,.5);
+	top: 0; left: 0;
+	padding: 20px;
+	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+	text-align: left;
+    animation: conf-panel-getin .2s ease;
+}
+.notif-confirmation-close{
+    position: fixed;
+	width: 100%; height: 100%;
+	top: 0; left: 0;
+}
+.notif-confirmation{
+	position: relative;
+	box-sizing: border-box;
+	margin: auto; padding: 20px 15px 15px 15px;
+	width: 100%;
+	max-width: 300px;
+	background: white;
+	border-radius: 2px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+@keyframes conf-panel-getin{
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
