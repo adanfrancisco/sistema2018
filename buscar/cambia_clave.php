@@ -6,6 +6,7 @@ $ddni=$_POST['ddni'];
 $usuario=$_SESSION['usuario_id'];
 
 include('../acceso_db.php');
-echo $ddni;
+
+echo $ddni.'-'.$clave_nueva;
 
  ?>

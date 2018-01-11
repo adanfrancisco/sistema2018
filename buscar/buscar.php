@@ -40,11 +40,14 @@
              });
                 $("#btn_ya_licencia").on( "click", function() {  
                         console.log('esta avisando licencia');
+
                         var ddni=0;
                         var ddni=$("#dddni").val();
+                        var desde=$("#licencia_desde").val();
+                        var dias=$("#licencia_dias").val();
 
                         //$('#licencia').text(ddni);
-                        $.post("buscar/licencia.php", { xclave_nueva: xclave_nueva, ddni: ddni },
+                        $.post("buscar/licencia.php", { desde: desde, dias:dias, ddni: ddni },
                         function(data){$("#licencia").html(data);});
                         });
 
@@ -152,7 +155,8 @@ if (isset($consultaBusqueda)) {
                 <div id="licencia" hidden="true" >
                     <input type="hidden" name="ddni" id="dddni" value="'.$dni.'">
 
-                        <input name="inp_licencia" id="inp_licencia" class="input-text align-center" style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="SELECCIONAR LICENCIA" style="text-transform:uppercase;">
+                        <input name="licencia_desde" id="licencia_desde" class="input-text align-center" style="padding: 0; width: 100px" type="DATE"  maxlength="50" placeholder="FECHA INICIO" style="text-transform:uppercase;">
+                        <input name="licencia_dias" id="licencia_dias" class="input-text align-center" style="padding: 0; width: 100px" type="number"  maxlength="50" placeholder="dias" style="text-transform:uppercase;">
                         <button class="input-submit-green" id="btn_ya_licencia">
                             GUARDAR
                         </button>
