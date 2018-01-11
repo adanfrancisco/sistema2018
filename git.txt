@@ -10,3 +10,4 @@ git push current branch (origin)
 para eliminar (sudo su)
 cd carpeta/
 rm -rf .git
+jj
