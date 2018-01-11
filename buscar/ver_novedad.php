@@ -36,6 +36,7 @@ if ($resultado = $con->query($sql)){
   echo '<SELECT NAME="fecha" id="fecha"><OPTION>FECHA</option>';   
          $i=0;
             while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) {
+
             echo'<OPTION VALUE="'.$fila['fecha'].'">'.$fila['fecha'].'</OPTION>    ';
                 echo $fila['fecha'];
             }

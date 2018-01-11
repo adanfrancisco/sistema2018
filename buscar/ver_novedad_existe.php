@@ -15,5 +15,5 @@ if ($resultado = $con->query($sql)){
 
     }
 
-     echo 'Hoy <b>'.$fecha.'</b> --> <u>'.$cantidad. ' novedades</u>';
+     echo 'ULTIMA: <b>'.$fecha.'</b> --> <u>'.$cantidad. ' novedades</u>';
 ?>
