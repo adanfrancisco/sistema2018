@@ -1,6 +1,5 @@
-<script type="text/javascript">
-    $(document).ready(function()
-        {
+<script >
+ 
 //DESARROLLO DEL AVISO
         $("#btn_aviso").on( "click", function() {    
             $('#mensaje').toggle("swing");
@@ -8,15 +7,15 @@
             $('#clave').hide();
              
              });
-                $("#btn_ya_aviso").on( "click", function() {  
-                        console.log('esta avisando');
-                        var ddni=0;
-                        var xaviso=$("#aviso").val();
-                        var ddni=$("#ddni").val();
-                        //$('#mensaje').text(ddni);
-                            $.post("buscar/grabaaviso.php", { xaviso: xaviso, ddni: ddni },
-                            function(data){$("#mensaje").html(data);});}
-                            );
+            $("#btn_ya_aviso").on( "click", function() {  
+                    console.log('esta avisando');
+                    var ddni=0;
+                    var xaviso=$("#aviso").val();
+                    var ddni=$("#ddni").val();
+                    //$('#mensaje').text(ddni);
+                        $.post("buscar/grabaaviso.php", { xaviso: xaviso, ddni: ddni },
+                        function(data){$("#mensaje").html(data);});}
+                        );
 //DESARROLLO DE CLAVE
         $("#btn_clave").on( "click", function() {    
             $('#clave').toggle("swing");
@@ -32,7 +31,6 @@
                         $.post("buscar/cambia_clave.php", { xclave_nueva: xclave_nueva, ddni: ddni },
                         function(data){$("#clave").html(data);});
                         });
-
 //DESARROLLO DE LICENCIA
         $("#btn_licencia").on( "click", function() {    
             $('#licencia').toggle("swing");
@@ -49,7 +47,8 @@
                         $.post("buscar/licencia.php", { xclave_nueva: xclave_nueva, ddni: ddni },
                         function(data){$("#licencia").html(data);});
                         });
-        });
+
+ 
 </script>
 <?php
 session_start();
@@ -123,19 +122,16 @@ if (isset($consultaBusqueda)) {
 			//Output
             if($filas==1){
     //inicio if nivel
-    //<button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button>  
-    //<button class="input-submit-blue" id="btn_clave"   >CLAVE</button> 
+
                 if($_SESSION['nivel']==1){
                     $mensaje='<div id="menu">
                     <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
-
-                    </div>';
+                    <button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button>  
+                    <button class="input-submit-blue" id="btn_clave"   >CLAVE</button> ';
                 }else{
                     //<button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button> 
                     $mensaje='<div id="menu">
-                    <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
- 
-                    </div>';
+                    <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>';
                 }//fin else NIVEL
 
             $mensaje .= '<hr>Click en DNI para EDITAR <br>
@@ -143,41 +139,44 @@ if (isset($consultaBusqueda)) {
             <!-- inicio de mensaje -->
                 <div id="mensaje" hidden="true">
                 <input type="hidden" name="ddni" id="ddni" value="'.$dni.'">
-                    <form action="#" method="post">
+    
                         <input name="aviso" id="aviso" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL AVISO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                         <button class="input-submit-green" id="btn_ya_aviso">
                             Enviar
                         </button>
-                    </form>
+                   
                 </div> <!-- fin div mensaje -->
 
                 <!-- inicio de licencia -->
+
                 <div id="licencia" hidden="true" >
                     <input type="hidden" name="ddni" id="dddni" value="'.$dni.'">
-                    <form action="#" method="post">
+
                         <input name="inp_licencia" id="inp_licencia" class="input-text align-center" style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="SELECCIONAR LICENCIA" style="text-transform:uppercase;">
                         <button class="input-submit-green" id="btn_ya_licencia">
                             GUARDAR
                         </button>
-                    </form>
-                </div>
+                    </form>                </div>
                 <!-- fin div licencia -->
 
                 <!-- inicio de clave -->
                 <div id="clave" hidden="true" >
                   <input type="hidden" name="ddni" id="dddni" value="'.$dni.'">
-                    <form action="#" method="post">
+
                         <input name="clave_nueva" id="clave_nueva" class="input-text align-center" style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="NUEVA CLAVE" style="text-transform:uppercase;">
                         <button class="input-submit-green" id="btn_nueva_clave">
                             CAMBIAR
                         </button>
-                    </form>
+
                 </div>
                 <!-- fin div clave -->
+
+                
 
             </div>
             <hr>
             <br>
+
             <div id="docente" align="center">
 			<p align="left">
             <font size=3 color="red">
