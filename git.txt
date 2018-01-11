@@ -1,5 +1,7 @@
 git quick status
-CTRL + MAYUS + S = git add -A
+CTRL + MAYUS + S = git add -All
+Git: Push Current Branch
+
 git quick add
 git quick repo
 
