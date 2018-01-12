@@ -15,7 +15,17 @@ where dni=$ddni";
 if ($resultado = $con->query($sql)){
 
 	if($resultado->num_rows > 0){
-		echo 'Tiene usuario';
+		//echo 'clave nueva:'.$clave_nueva.'<br>';
+		$sql="UPDATE usuarios set usuario_clave='".md5($clave_nueva)."'";
+
+		$reg=$con->query($sql);
+		if($reg) {
+                      echo "Se CAMBIO la clave a: ".$clave_nueva.'<br>';;
+
+                  }else {
+                        echo "<b>No se pudo CAMBIAR la CLAVE</b><br>";
+                        echo mysqli_error($con);
+                  }
 	}else{
 		echo 'esa persona no tiene usuario';
 	}
