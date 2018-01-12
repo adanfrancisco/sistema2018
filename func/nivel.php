@@ -2,7 +2,7 @@
 session_start();
 //echo 'el nivel de usuario es:'.$_SESSION['nivel'];
 if(isset($_SESSION['nivel'])){
-switch ($_SESSION['nivel']) {
+    switch ($_SESSION['nivel']) {
 
                             case 5:
                                // include('cambioclaveusuario.php')
