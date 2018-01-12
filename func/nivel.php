@@ -61,5 +61,6 @@ if(isset($_SESSION['nivel'])){
                         }
 }else{
   echo '';
+  
 }
 ?>
