@@ -30,17 +30,17 @@ $xxdni=(int)$xxdni;
             $fechai=$resultados['fecha_ing_escuela'];
             $fechad=$resultados['fecha_ing_doc'];
             $domicilio=$resultados['domicilio'];
-            $localidad=$resultados['localidad'];
+            $localidad_local=$resultados['localidad'];
             $email=$resultados['email'];
             $telefono=$resultados['telefono'];
             $telcelu=$resultados['celular'];
           }
 
-
 ?>
 
 <!-- <script src="../js/jquery-1.4.4.min.js"></script> -->
 <SCRIPT>
+
 function IsNumeric(valor) 
 {
     var log=valor.length; var sw="S"; 
@@ -162,9 +162,11 @@ required="" >
         ?>
        
     </SELECT>
+    <script>
+            $("#localidad").val(<?=$localidad_local?>);
+        </script>
 
-
-<input name="telfijo" id="telfijo" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="<?echo $telefono;?>" maxlength="10" placeholder="NRO FIJO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" ;"
+<input name="telfijo" id="telfijo" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="<?=$telefono;?>" maxlength="10" placeholder="NRO FIJO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" ;"
 required="">  
 
 <input name="telcelu" id="telcelu" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="<?=$telcelu ?>" maxlength="10" placeholder="NRO CELULAR" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" ;"
@@ -186,9 +188,7 @@ required="">
 <button class="input-submit-green" id="cerrar"  onclick="saleprofe()" >Cerrar</button>
 
     </form> 
-        <script>
-            $("#localidad").val("<? echo $localidad; ?>");
-        </script>
+
 <?php 
 
 }else{echo '<br>Usted No tiene privilegios para editar';}
