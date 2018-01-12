@@ -11,7 +11,7 @@ $xxdni=(int)$xxdni;
     include('../acceso_db.php'); // incluímos los datos de conexión a la BD
 //busco el profe
  $consulta = $con->query("SELECT dni,legajo,apellido,nombre,fecha_nac,fecha_ing_escuela,
- domicilio, p.localidad, email, telefono, celular FROM profesores as p
+ fecha_ing_doc,domicilio, p.localidad, email, telefono, celular FROM profesores as p
     inner join localidad
     on p.localidad=localidad.idlocalidad
     WHERE dni=$xxdni
