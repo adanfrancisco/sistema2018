@@ -38,8 +38,7 @@ if(isset($_SESSION['nivel'])){
 
                                 <ul id="texto-color">Gestion </ul>
 
-                                <!-- <ul >Cambio de claves</ul> -->
-                                <ul><a href="#" onclick="claves()">Cambiar Claves</a></ul>
+                                
                                 <ul><a href="#" onclick="altaprofe()">Alta de Profesores</a></ul>
 
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>

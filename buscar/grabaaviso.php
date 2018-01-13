@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-setlocale(LC_ALL,”es_AR”);
+//setlocale(LC_ALL,”es_AR”);
 $aviso=$_POST['xaviso'];
 $ddni=$_POST['ddni'];
 $fecha= date("d-m-Y ");;

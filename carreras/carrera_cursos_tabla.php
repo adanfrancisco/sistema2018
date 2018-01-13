@@ -71,17 +71,18 @@ echo '<div id="page"> <table name="table" id="table" border=1>
                             <td>'.$fila['materia_modulo'].'</td>
                             <td>'.$fila['apellido'].','.$fila['nombre'].'</td>
                             <td>'.$fila['revista_sigla'].'</td>';
-    $reemp=$fila['reemplazo'];
-
-    $reemplazado=$con->query("select * from profesores where dni=$reemp.");
+                            // <td>'.$fila['reemplazo'].'</td>';
+              $apell=$fila['reemplazo'];
+              if(!$apell==0){
+    $reemplazado=$con->query("select * from profesores where dni=$apell");
     while($filaa=$reemplazado->fetch_array(MYSQLI_BOTH)){
         $apell= $filaa['apellido'];
-    }                
+    }              
                         echo '
-                        <td>'.$apell.'</td>
+                        <td>'.$fila['reemplazo'].' '.$apell.'</td>
                         </tr>
                     </tbody>';
-
+  }
             }echo '</table></div>';
 
 ?>

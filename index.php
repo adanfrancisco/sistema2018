@@ -79,8 +79,9 @@
 	}
 	function novedad()
 	{ 
-		$("#reabajo").load('buscar/ver_novedad_existe.php');
-		$('#abajo').load("buscar/ver_novedad.php");
+
+		$("#abajo").load('buscar/ver_novedad_existe.php');
+		$('#reabajo').load("buscar/ver_novedad.php");
 	}
 	function editar_profesor2()
 	{ 
