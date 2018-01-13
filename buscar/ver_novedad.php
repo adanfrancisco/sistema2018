@@ -30,7 +30,7 @@ session_start();
 
 include('../acceso_db.php');
 //echo ('texto en el php - cargando novedades desde ver_novedad.php');
-$sql="SELECT * from profe_novedad  group by fecha order by fecha desc";
+$sql="SELECT * from profe_novedad  group by fecha order by fecha desc ";
 
 if ($resultado = $con->query($sql)){    
   echo '<SELECT NAME="fecha" id="fecha"><OPTION>FECHA</option>';   

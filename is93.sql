@@ -6,7 +6,8 @@
 -- Tiempo de generación: 13-01-2018 a las 07:14:32
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
-
+mysql -u root -p
+mysql > SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
