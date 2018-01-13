@@ -10,7 +10,6 @@
 					//este anda bien
 					$("#ingreso").click(function(event) 
 					{
-						
 						ingresar();
 						location.reload();
 					});
@@ -88,10 +87,6 @@
 
 		var xxdni=$("#edita_profe").text();
 
-		//$("#reabajo").html(data);
-		//$("#dni").text($("#edita_profe").text());
-		//$("#reabajo").text(xxdni);
-
 				$.post("buscar/editaprofe.php", {xxdni: xxdni}, 
 					function(data){$("#reabajo").html(data);
 				window.location="#edicion";
@@ -114,16 +109,15 @@
 		};
 
 		function enviar(){
-			//alert('si');
+
 			$("#reabajo").load('carreras/blanco.php');
 			console.log('carga la busqueda');
 			$("#abajo").load('buscar/index.php');
-			//$(':input').focus();
-			//$("#abajo").load('prueba.html');
 }
 
  
       function grabaprofe(){
+		  
       var xdni=0;
       if(!$("#dni").val()){
       	xdni=0;
