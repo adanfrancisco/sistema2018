@@ -1,0 +1,6 @@
+aqui se debe construir 
+
+alta y modificacion de alumnos
+relaciones con carrera/materia
+inscripcion a Materias
+Inscripcion a Finales
