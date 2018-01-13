@@ -130,11 +130,14 @@ if (isset($consultaBusqueda)) {
                     $mensaje='<div id="menu">
                     <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
                     <button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button>  
-                    <button class="input-submit-blue" id="btn_clave"   >CLAVE</button> ';
+                    <button class="input-submit-blue" id="btn_clave"   >CLAVE</button> 
+                    ';
                 }else{
                     //<button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button> 
                     $mensaje='<div id="menu">
-                    <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>';
+                    <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
+                    <button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button> 
+                    ';
                 }//fin else NIVEL
 
             $mensaje .= '<hr>Click en DNI para EDITAR <br>
