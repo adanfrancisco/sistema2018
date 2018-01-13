@@ -1,6 +1,6 @@
  <?php 
 
-include('acceso_db.php');
+include('../acceso_db.php');
     $consulta="select * from carrera";
         if ($resultado = $con->query($consulta)) 
         {

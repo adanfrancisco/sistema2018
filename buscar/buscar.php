@@ -57,7 +57,7 @@
 session_start();
 
 //Archivo de conexión a la base de datos
-require('../acceso_db.php');
+include('../acceso_db.php');
 
 //Variable de búsqueda
 $consultaBusqueda = $_POST['valorBusqueda'];

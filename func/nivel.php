@@ -1,8 +1,9 @@
 <?php
 session_start();
 //echo 'el nivel de usuario es:'.$_SESSION['nivel'];
-switch ($_SESSION['nivel']) {
-    
+if(isset($_SESSION['nivel'])){
+    switch ($_SESSION['nivel']) {
+
                             case 5:
                                // include('cambioclaveusuario.php')
                                 //echo '<br><br><h1><font color="red" >Cambie su clave haciendo click en su nombre</font></h1>';
@@ -10,7 +11,7 @@ switch ($_SESSION['nivel']) {
                             case 4://preceptor
                                 echo '
                                 <ul id="texto-color">BUSQUEDA </ul>
-                              
+
                                 <ul ><a href="#" onclick="enviar()" >Buscar Profesor</a></ul>
                                 <ul ><a href="#" onclick="novedad()" >VER Novedades</a></ul>
 
@@ -29,9 +30,9 @@ switch ($_SESSION['nivel']) {
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';
 
                                     ?>
-                                
+
                                 <ul id="texto-color">BUSQUEDA </ul>
-                              
+
                                 <ul ><a href="#" onclick="enviar()" >Buscar Profesor</a></ul>
                                 <ul ><a href="#" onclick="novedad()" >VER Novedades</a></ul>
 
@@ -45,17 +46,21 @@ switch ($_SESSION['nivel']) {
 
                                  <ul><a href="#" onclick="materias()">Materias Por CARRERA</a></ul>
 
-                                
+
                               <!--   <ul>Asociar Profesor a Materia</ul>
 
                                 <ul>Asociar SUPLENTE a Materia</ul> -->
-                                
+
                                 <!--
                                 <ul><a href="asociaprofe_s1.php">Baja a SUPLENTE </a></ul>
                                 -->
-                                
-                                <?php 
-                                
+
+                                <?php
+
                                 break;
                         }
+}else{
+  echo '';
+  
+}
 ?>
