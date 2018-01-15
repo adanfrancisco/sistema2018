@@ -27,6 +27,8 @@ $consultacurso="select * from carrera inner join curso  on carrera.`id_carrera`=
             }
         }
         echo '</select>';
-        echo ' cod carrera:'.$carrera;
+######################################################################
+       // echo ' cod carrera:'.$carrera;
+######################################################################
 //  echo $options;
 ?>

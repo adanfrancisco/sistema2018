@@ -12,9 +12,7 @@
                     var ddni=0;
                     var xaviso=$("#aviso").val();
                     var ddni=$("#ddni").val();
-                    $('#btn_ya_aviso').attr("disabled", true);
-                    $("#aviso").attr("disabled", true);
-
+                $('#btn_ya_aviso').attr("disabled", true);
                     //$('#mensaje').text(ddni);
                         $.post("buscar/grabaaviso.php", { xaviso: xaviso, ddni: ddni },
                         function(data){$("#mensaje").html(data);});}
@@ -30,10 +28,6 @@
                         var ddni=0;
                         var xclave_nueva=$("#clave_nueva").val();
                         var ddni=$("#dddni").val();
-
-                        $("#btn_nueva_clave").attr("disabled", true);
-                        $("#clave_nueva")$("#aviso").attr("disabled", true);
-                        
                         //$('#clave').text('quiere cambiar clave a: '+ ddni + '-'+clave_nueva);
                         $.post("buscar/cambia_clave.php", { xclave_nueva: xclave_nueva, ddni: ddni },
                         function(data){$("#clave").html(data);});
@@ -52,9 +46,6 @@
                         var ddni=$("#dddni").val();
                         var desde=$("#licencia_desde").val();
                         var dias=$("#licencia_dias").val();
-                        $("#btn_ya_licencia").attr("disabled", true);
-                        $("#licencia_desde").attr("disabled", true);
-                        $("#licencia_dias").attr("disabled", true);
 
                         //$('#licencia').text(ddni);
                         $.post("buscar/licencia.php", { desde: desde, dias:dias, ddni: ddni },

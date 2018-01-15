@@ -41,8 +41,8 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
                 if($result->num_rows > 0){
                     //echo 'hay usuarios';
                     while($row=$result->fetch_array()){
-                        //session_start();
-                       // echo 'usuario:'.$row['usuario_nombre'].' - '.$row['usuario_clave'];
+                        session_start();
+                        echo 'usuario:'.$fila['usuario_nombre'].' - '.$fila['usuario_clave'];
                         $_SESSION['usuario_id'] = $row['usuario_id']; // creamos la sesion "usuario_id" y le asignamos como valor el campo usuario_id
                         $_SESSION['usuario_nombre'] = $row["usuario_nombre"]; // creamos la sesion "usuario_nombre" y le asignamos como valor el campo usuario_nombre
 
