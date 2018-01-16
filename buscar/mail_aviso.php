@@ -2,14 +2,20 @@
 
  require("class.phpmailer.php");
  require("class.smtp.php");
+ 
+ $aviso=$_POST['xaviso'];
+ $ddni=$_POST['ddni'];
+ $fecha= date("d-m-Y ");;
+ $usuario=$_SESSION['usuario_id'];
+
  //echo 'hola';
 // // // Valores enviados desde el formulario
 // // if ( !isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["mensaje"]) ) {
 // //     die ("Es necesario completar todos los datos del formulario");
 // // }
-$nombre = 'pepe';//$_POST["nombre"];
+$nombre = $usuario;//$_POST["nombre"];
 $email ='mimail@mimail.com';// $_POST["email"];
-$mensaje = 'hola es una prueba';//$_POST["mensaje"];
+$mensaje ='Mensaje para dni '.$ddni.' - '. $aviso;//$_POST["mensaje"];
 
 // Datos de la cuenta de correo utilizada para enviar vía SMTP
 $smtpHost = "c0990267.ferozo.com";  // Dominio alternativo brindado en el email de alta 
