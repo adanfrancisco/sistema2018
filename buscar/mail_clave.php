@@ -8,21 +8,14 @@
  $fecha= date("d-m-Y ");;
  $usuario=$_SESSION['usuario_id'];
 
- //busco al profe para poner su nombre
- include('../acceso_db.php');
-$sql="SELECT * FROM profesores where dni=".$ddni;
-if ($resultado = $con->query($sql)){    
-  
-    while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
-              {$nombre_profe =$fila['apellido'].', '.$fila['nombre'];}
-   
-  
-      }
-  
- 
+ //echo 'hola';
+// // // Valores enviados desde el formulario
+// // if ( !isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["mensaje"]) ) {
+// //     die ("Es necesario completar todos los datos del formulario");
+// // }
 $nombre = $usuario;//$_POST["nombre"];
-$email ='noresponder@institutosuperior93.com';// $_POST["email"];
-$mensaje ='El Profesor '.$ddni.' - '.$nombre_profe.'-<br>'.$aviso;//$_POST["mensaje"];
+$email ='mimail@mimail.com';// $_POST["email"];
+$mensaje ='Mensaje para dni '.$ddni.' - '. $aviso;//$_POST["mensaje"];
 
 // Datos de la cuenta de correo utilizada para enviar vía SMTP
 $smtpHost = "c0990267.ferozo.com";  // Dominio alternativo brindado en el email de alta 
@@ -48,10 +41,10 @@ $mail->From = $email; // Email desde donde envío el correo.
 $mail->FromName = $nombre;
 $mail->AddAddress($emailDestino); // Esta es la dirección a donde enviamos los datos del formulario
 
-$mail->Subject = "AVISO is93"; // Este es el titulo del email.
+$mail->Subject = "DonWeb - Ejemplo de formulario de contacto"; // Este es el titulo del email.
 $mensajeHtml = nl2br($mensaje);
-$mail->Body = "{$mensajeHtml} <br /><br />Enviado desde nuestro sistema web.<br />"; // Texto del email en formato HTML
-$mail->AltBody = "{$mensaje} \n\n Enviado desde nuestro sistema web."; // Texto sin formato HTML
+$mail->Body = "{$mensajeHtml} <br /><br />Formulario de ejemplo. By DonWeb<br />"; // Texto del email en formato HTML
+//$mail->AltBody = "{$mensaje} \n\n Formulario de ejemplo By DonWeb"; // Texto sin formato HTML
 // FIN - VALORES A MODIFICAR //
 
 $mail->SMTPOptions = array(

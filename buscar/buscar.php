@@ -16,6 +16,7 @@
                     //$('#mensaje').text(ddni);
                         $.post("buscar/grabaaviso.php", { xaviso: xaviso, ddni: ddni },
                         function(data){$("#mensaje").html(data);});
+                        
                         $.post("buscar/mail_aviso.php", { xaviso: xaviso, ddni: ddni },
                         function(data){$("#mensaje").html(data);});
                         }
