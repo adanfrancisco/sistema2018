@@ -15,9 +15,7 @@ if ($resultado = $con->query($sql)){
   
     while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
               {$nombre_profe =$fila['apellido'].', '.$fila['nombre'];}
-   
-  
-      }
+        }
   
  
 $nombre = $usuario;//$_POST["nombre"];

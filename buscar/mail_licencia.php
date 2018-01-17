@@ -3,11 +3,19 @@
  require("class.phpmailer.php");
  require("class.smtp.php");
  
- $aviso=$_POST['xaviso'];
+ $desde=$_POST['desde'];
+ $dias=$_POST['dias'];
  $ddni=$_POST['ddni'];
  $fecha= date("d-m-Y ");;
  $usuario=$_SESSION['usuario_id'];
-
+ 
+ include('../acceso_db.php');
+$sql="SELECT * FROM profesores where dni=".$ddni;
+if ($resultado = $con->query($sql)){    
+  
+    while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
+              {$nombre_profe =$fila['apellido'].', '.$fila['nombre'];}
+        }
  //echo 'hola';
 // // // Valores enviados desde el formulario
 // // if ( !isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["mensaje"]) ) {
