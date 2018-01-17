@@ -60,7 +60,29 @@
                         $.post("buscar/mail_licencia.php", { desde: desde, dias:dias, ddni: ddni },
                         function(data){$("#licencia").html(data);});
                         });
+//DESARROLLO DEL USUARIO
+        $("#btn_usuario").on( "click", function() {  
+            $('#usuarioS').toggle("swing");
+            $('#mensaje').hide();
+            $('#licencia').hide();
+            $('#clave').hide();
+            //nuevo_usuario nueva_clave
+            $("#btn_asigna_usuario").on( "click", function() {  
+                        console.log('esta asignando un usuario al DNI consultado');
 
+                        var ddni=0;
+                        var ddni=$("#dddni").val();
+                        var usuario_nombre=$("#nuevo_usuario").val();
+                        var usuario_clave=$("#nueva_clave").val();
+
+                        //$('#licencia').text(ddni);
+                        $.post("buscar/nuevo_usuario.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
+                        function(data){$("#licencia").html(data);});
+
+                        // $.post("buscar/mail_licencia.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni},
+                        // function(data){$("#licencia").html(data);});           
+             
+             });
  
 </script>
 <?php
@@ -141,6 +163,7 @@ if (isset($consultaBusqueda)) {
                     <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
                     <button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button>  
                     <button class="input-submit-blue" id="btn_clave"   >CLAVE</button> 
+                    <button class="input-submit-blue" id="btn_usuario"   >USUARIO</button>
                     ';
                     break;
                 case 4:
@@ -152,7 +175,19 @@ if (isset($consultaBusqueda)) {
                     break;
                 }//fin switch NIVEL
 
-            $mensaje .= '<hr>Click en DNI para EDITAR <br>
+            $mensaje .= '<hr> <br>
+
+            <!-- inicio de usuario -->
+                <div id="usuarioS" hidden="true">
+                <input type="hidden" name="ddni" id="ddni" value="'.$dni.'">
+    
+                        <input name="nuevo_usuario" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <input name="nueva_clave" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <button class="input-submit-green" id="btn_usuario">
+                            Enviar
+                        </button>
+                   
+                </div> <!-- fin div usuario -->
 
             <!-- inicio de mensaje -->
                 <div id="mensaje" hidden="true">
@@ -184,7 +219,7 @@ if (isset($consultaBusqueda)) {
                   <input type="hidden" name="ddni" id="dddni" value="'.$dni.'">
 
                         <input name="clave_nueva" id="clave_nueva" class="input-text align-center" style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="NUEVA CLAVE" style="text-transform:uppercase;">
-                        <button class="input-submit-green" id="btn_nueva_clave">
+                        <button class="input-submit-green" id="btn_asigna_usuario">
                             CAMBIAR
                         </button>
 
