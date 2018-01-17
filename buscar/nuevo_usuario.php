@@ -34,6 +34,15 @@ if($cantidad>0){
               $sql="INSERT INTO usuarios(usuario_nombre,usuario_clave,usuario_nivel,usuario_freg)
                VALUES('$usuario_nombre','".md5($usuario_clave)."',2,'$fecha')";
                echo $sql;
+
+              //trae id
+               $sql_trae_id="SELECT * FROM usuarios where usuario_nombre=".$ddni;
+               
+
+               //update profesores
+               $sql_actualiza_profe="UPDATE profesores SET usuario_id=".$id;
+               
+
             echo '<br> Se asigno el usuario:<b> 
             '.$usuario_nombre.'</b> <br>clave<b> 
             '.$usuario_clave.'</b><br>a :<b> '.$nombre_profe.'</b>';
