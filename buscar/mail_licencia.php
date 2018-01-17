@@ -16,14 +16,10 @@ if ($resultado = $con->query($sql)){
     while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
               {$nombre_profe =$fila['apellido'].', '.$fila['nombre'];}
         }
- //echo 'hola';
-// // // Valores enviados desde el formulario
-// // if ( !isset($_POST["nombre"]) || !isset($_POST["email"]) || !isset($_POST["mensaje"]) ) {
-// //     die ("Es necesario completar todos los datos del formulario");
-// // }
-$nombre = $usuario;//$_POST["nombre"];
-$email ='mimail@mimail.com';// $_POST["email"];
-$mensaje ='Mensaje para dni '.$ddni.' - '. $aviso;//$_POST["mensaje"];
+
+$nombre = $usuario;
+$email ='noresponder@institutosuperior93.com';// $_POST["email"];
+$mensaje ='El Profesor '.$ddni.' - '.$nombre_profe.'-<br> Pide licencia desde el '.$desde.' por '.$dias .' Dias';//$_POST["mensaje"];
 
 // Datos de la cuenta de correo utilizada para enviar vía SMTP
 $smtpHost = "c0990267.ferozo.com";  // Dominio alternativo brindado en el email de alta 

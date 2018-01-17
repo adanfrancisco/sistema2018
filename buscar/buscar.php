@@ -1,5 +1,7 @@
 <script >
- 
+
+
+
 //DESARROLLO DEL AVISO
         $("#btn_aviso").on( "click", function() {    
             $('#mensaje').toggle("swing");
@@ -163,8 +165,9 @@ if (isset($consultaBusqueda)) {
                 <div id="licencia" hidden="true" >
                     <input type="hidden" name="ddni" id="dddni" value="'.$dni.'">
 
-                        <input name="licencia_desde" id="licencia_desde" class="input-text align-center" style="padding: 0; width: 100px" type="DATE"  maxlength="50" placeholder="FECHA INICIO" style="text-transform:uppercase;">
-                        <input name="licencia_dias" id="licencia_dias" class="input-text align-center" style="padding: 0; width: 100px" type="number"  maxlength="50" placeholder="dias" style="text-transform:uppercase;">
+                        
+                    <input name="licencia_desde" id="licencia_desde" class="input-text align-center" style="padding: 0; width: 150px" type="DATE"  maxlength="50" placeholder="FECHA INICIO" style="text-transform:uppercase;"  value="'.date("Y-m-d").'">
+                        <input name="licencia_dias" value=1 id="licencia_dias" class="input-text align-center" style="padding: 0; width: 100px" type="number"  maxlength="50" placeholder="dias" style="text-transform:uppercase;">
                         <button class="input-submit-green" id="btn_ya_licencia">
                             GUARDAR
                         </button>
