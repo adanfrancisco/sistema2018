@@ -135,20 +135,22 @@ if (isset($consultaBusqueda)) {
 			//Output
             if($filas==1){
     //inicio if nivel
-
-                if($_SESSION['nivel']==1){
+                switch($_SESSION['nivel']){
+                case 1:
                     $mensaje='<div id="menu">
                     <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
                     <button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button>  
                     <button class="input-submit-blue" id="btn_clave"   >CLAVE</button> 
                     ';
-                }else{
+                    break;
+                case 4:
                     //<button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button> 
                     $mensaje='<div id="menu">
                     <button class="input-submit-blue" id="btn_aviso"   >AVISO</button>
                     <button class="input-submit-blue" id="btn_licencia"   >LICENCIA</button> 
                     ';
-                }//fin else NIVEL
+                    break;
+                }//fin switch NIVEL
 
             $mensaje .= '<hr>Click en DNI para EDITAR <br>
 
