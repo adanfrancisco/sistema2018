@@ -39,9 +39,6 @@ if($cantidad>0){
             '.$usuario_clave.'</b><br>a :<b> '.$nombre_profe.'</b>';
         }   
 
-
-
-
 // $sql="INSERT INTO profe_novedad(profe,novedad,fecha,responsable) 
 
 // //echo $sql;
