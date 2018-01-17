@@ -62,12 +62,13 @@
                         });
 //DESARROLLO DEL USUARIO
         $("#btn_usuario").on( "click", function() {  
-            $('#usuarioS').toggle("swing");
+            $('#usuario_div').toggle("swing");
             $('#mensaje').hide();
             $('#licencia').hide();
             $('#clave').hide();
+        });
             //nuevo_usuario nueva_clave
-            $("#btn_asigna_usuario").on( "click", function() {  
+            $("#btn_usuario_nuevo").on( "click", function() {  
                         console.log('esta asignando un usuario al DNI consultado');
 
                         var ddni=0;
@@ -77,7 +78,7 @@
 
                         //$('#licencia').text(ddni);
                         $.post("buscar/nuevo_usuario.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
-                        function(data){$("#licencia").html(data);});
+                        function(data){$("#usuario_div").html(data);});
 
                         // $.post("buscar/mail_licencia.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni},
                         // function(data){$("#licencia").html(data);});           
@@ -178,12 +179,12 @@ if (isset($consultaBusqueda)) {
             $mensaje .= '<hr> <br>
 
             <!-- inicio de usuario -->
-                <div id="usuarioS" hidden="true">
+                <div id="usuario_div" hidden="true">
                 <input type="hidden" name="ddni" id="ddni" value="'.$dni.'">
     
-                        <input name="nuevo_usuario" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
-                        <input name="nueva_clave" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
-                        <button class="input-submit-green" id="btn_usuario">
+                        <input name="nuevo_usuario" value="'.$dni.'" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <input name="nueva_clave" value="'.$dni.'" id="nueva_clave" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <button class="input-submit-green" id="btn_usuario_nuevo">
                             Enviar
                         </button>
                    
