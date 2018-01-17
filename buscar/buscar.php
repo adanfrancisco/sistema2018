@@ -56,6 +56,9 @@
                         //$('#licencia').text(ddni);
                         $.post("buscar/licencia.php", { desde: desde, dias:dias, ddni: ddni },
                         function(data){$("#licencia").html(data);});
+
+                        $.post("buscar/mail_licencia.php", { desde: desde, dias:dias, ddni: ddni },
+                        function(data){$("#licencia").html(data);});
                         });
 
  
