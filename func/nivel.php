@@ -30,7 +30,7 @@ if(isset($_SESSION['nivel'])){
                                     <ul id="texto-color">MI USUARIO </ul>
                                     <b>EDITAR</b> mis datos
                                     <font size=3 color="red">
-                                    <a href="#" onclick="editar_profesor2()" 
+                                    <a href="#" onclick="editaprofe_profesor2()" 
                                     id="edita_profe"><?php echo  $dni; ?> 
                                     </a>
                                     </font> 
