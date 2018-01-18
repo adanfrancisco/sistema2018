@@ -73,6 +73,7 @@
 		$("#abajo").load('usuarios/clave_admin.php');
 		$('#reabajo').load("buscar/ver_novedad.php");
 	}
+	
 	function novedad()
 	{ 
 

@@ -1,3 +1,22 @@
+<script>
+    $("#cambia_clave").on( "click", function() {    
+    $('#usuario_div').toggle("swing");
+     });
+    //nuevo_usuario nueva_clave
+            $("#btn_usuario_nuevo").on( "click", function() {  
+                        console.log('esta asignando un usuario al DNI consultado');
+
+                        var ddni=0;
+                        var ddni=$("#dddni").val();
+                        var usuario_nombre=$("#nuevo_usuario").val();
+                        var usuario_clave=$("#nueva_clave").val();
+
+                        //$('#licencia').text(ddni);
+                        $.post("buscar/nuevo_usuario_por_id.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
+                        function(data){$("#usuario_div").html(data);});        
+             
+             });
+</script>
 <?php
 session_start();
 //echo 'el nivel de usuario es:'.$_SESSION['nivel'];
@@ -34,10 +53,24 @@ if(isset($_SESSION['nivel'])){
                                     id="edita_profe"><?php echo  $dni; ?> 
                                     </a>
                                     </font> 
-                                    <br><b>CAMBIAR</b> mi usuario <?php echo  $_SESSION['usuario_id']; ?>
+                                    <br><b>CAMBIAR</b> 
+                                    <a href="#" onclick="cambia_clave()" 
+                                    id="cambia_clave"><?php echo  $_SESSION['usuario_id']; ?> 
+                                    mi clave </a>
                                     <br><b>MODIFICAR</b> mi clave<br><br>
                                     <ul id="texto-color">MIS CURSOS </ul>
 
+                <!-- inicio de usuario -->
+                <div id="usuario_div" hidden="true">
+                <input type="hidden" name="ddni" id="ddni" value="<?php echo  $_SESSION['usuario_id']; ?>">
+    
+                        <input name="nuevo_usuario" value="<?php echo $dni; ?>" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:lowercase;" onkeyup="javascript:this.value=this.value.toLowerCase();">
+                        <input name="nueva_clave" value="<?php echo $dni; ?>" id="nueva_clave" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <button class="input-submit-green" id="btn_usuario_nuevo">
+                            Enviar
+                        </button>
+                   
+                </div> <!-- fin div usuario -->
 
                                     <?php
                                 break;
