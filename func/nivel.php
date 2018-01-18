@@ -24,8 +24,22 @@ if(isset($_SESSION['nivel'])){
                                 echo 'alumno';
                                 break;
                             case 2:
-                                    echo 'profesor Cambie su clave';
-                                    // include('../profesores/cambia_clave.php')
+                                    $dni=(int)$_SESSION['usuario_nombre'];
+                                ?>
+
+                                    <ul id="texto-color">MI USUARIO </ul>
+                                    <b>EDITAR</b> mis datos
+                                    <font size=3 color="red">
+                                    <a href="#" onclick="editar_profesor2()" 
+                                    id="edita_profe"><?php echo  $dni; ?> 
+                                    </a>
+                                    </font> 
+                                    <br><b>CAMBIAR</b> mi usuario <?php echo  $_SESSION['usuario_id']; ?>
+                                    <br><b>MODIFICAR</b> mi clave<br><br>
+                                    <ul id="texto-color">MIS CURSOS </ul>
+
+
+                                    <?php
                                 break;
                             case 1:
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';

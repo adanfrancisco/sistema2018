@@ -62,11 +62,7 @@
 
 	<script>
 
-/*	function editar_profesor(){ 
 
-		document.getElementById("editar").onclick=function editar_registro(){
-		console.log(document.getElementById("editar").text);
-		}}	*/
 	function saleprofe(){
 		ingresar();
 		//location.reload();
@@ -83,7 +79,7 @@
 		$("#abajo").load('buscar/ver_novedad_existe.php');
 		$('#reabajo').load("buscar/ver_novedad.php");
 	}
-	function editar_profesor2()
+	function editaprofe_profesor2()
 	{ 
 
 		var xxdni=$("#edita_profe").text();

@@ -180,7 +180,7 @@ if (isset($consultaBusqueda)) {
                 <div id="usuario_div" hidden="true">
                 <input type="hidden" name="ddni" id="ddni" value="'.$dni.'">
     
-                        <input name="nuevo_usuario" value="'.$dni.'" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <input name="nuevo_usuario" value="'.$dni.'" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:lowercase;" onkeyup="javascript:this.value=this.value.toLowerCase();">
                         <input name="nueva_clave" value="'.$dni.'" id="nueva_clave" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                         <button class="input-submit-green" id="btn_usuario_nuevo">
                             Enviar
@@ -217,7 +217,8 @@ if (isset($consultaBusqueda)) {
                 <div id="clave" hidden="true" >
                   <input type="hidden" name="ddni" id="dddni" value="'.$dni.'">
 
-                        <input name="clave_nueva" id="clave_nueva" class="input-text align-center" style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="NUEVA CLAVE" style="text-transform:uppercase;">
+                        <input name="clave_nueva" id="clave_nueva" class="input-text align-center" 
+                        style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="NUEVA CLAVE" >
                         <button class="input-submit-green" id="btn_asigna_usuario">
                             CAMBIAR
                         </button>

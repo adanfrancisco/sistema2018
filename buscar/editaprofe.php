@@ -3,7 +3,7 @@
 session_start();
 //echo 'nivel'.$_SESSION['nivel'];
 
-if($_SESSION['nivel']==1){
+if($_SESSION['nivel']==1||$_SESSION['nivel']==4|| $_SESSION['nivel']==2){
 
 $xxdni=$_POST['xxdni'];
 $xxdni=(int)$xxdni;
