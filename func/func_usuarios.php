@@ -24,7 +24,10 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
                 }else{
                     //echo '<script>closeAllMsg(); createMsg("Se conecto a la base",3000,false,"error");</script>';
                 }
-                $sqlUsuario="SELECT usuario_id, usuario_nombre, usuario_clave, usuario_nivel FROM usuarios WHERE usuario_nombre='".$usuario_nombre."' AND usuario_clave='".md5($usuario_clave)."'";
+                $sqlUsuario="SELECT * FROM usuarios 
+                inner join profesores on usuarios.usuario_id=profesores.usuario_id 
+                where usuario_nombre='".$usuario_nombre."' 
+                AND usuario_clave='".md5($usuario_clave)."'";
                 //echo $sqlUsuario;
 
                 if($stmt = $con->prepare($sqlUsuario)){
@@ -45,7 +48,7 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
                         echo 'usuario:'.$fila['usuario_nombre'].' - '.$fila['usuario_clave'];
                         $_SESSION['usuario_id'] = $row['usuario_id']; // creamos la sesion "usuario_id" y le asignamos como valor el campo usuario_id
                         $_SESSION['usuario_nombre'] = $row["usuario_nombre"]; // creamos la sesion "usuario_nombre" y le asignamos como valor el campo usuario_nombre
-
+                        $_SESSION['dni']=$row["dni"];
 
                         $_SESSION['nivel']=$row['usuario_nivel'];
                         echo $_SESSION['nivel'];

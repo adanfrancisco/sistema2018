@@ -1,6 +1,7 @@
 <script>
     $("#cambia_clave").on( "click", function() {    
     $('#usuario_div').toggle("swing");
+    $('#reabajo').hide();
      });
     //nuevo_usuario nueva_clave
             $("#btn_usuario_nuevo").on( "click", function() {  
@@ -43,29 +44,43 @@ if(isset($_SESSION['nivel'])){
                                 echo 'alumno';
                                 break;
                             case 2:
-                                    $dni=(int)$_SESSION['usuario_nombre'];
+
+                                    $dni=$_SESSION['usuario_nombre'];
                                 ?>
 
                                     <ul id="texto-color">MI USUARIO </ul>
+                                    <?php
+                                         if(!ctype_digit($dni)){
+                                    ?>
                                     <b>EDITAR</b> mis datos
                                     <font size=3 color="red">
                                     <a href="#" onclick="editaprofe_profesor2()" 
-                                    id="edita_profe"><?php echo  $dni; ?> 
+                                    id="edita_profe"><?php echo   $_SESSION['dni']; ?> 
                                     </a>
                                     </font> 
-                                    <br><b>CAMBIAR</b> 
+                                    <?php 
+                                         }
+                                    if(ctype_digit($dni)){
+                                       // echo $_SESSION['dni'];
+                                    ?>
+                                    <br><b>CAMBIAR </b> 
                                     <a href="#" onclick="cambia_clave()" 
-                                    id="cambia_clave"><?php echo  $_SESSION['usuario_id']; ?> 
-                                    mi clave </a>
+                                    id="cambia_clave" value=<?php echo  $_SESSION['usuario_id']; ?>> 
+                                    usuario y clave </a>
+                                    <?php
+                                    }
+                                         if(!ctype_digit($dni)){
+                                    ?>
                                     <br><b>MODIFICAR</b> mi clave<br><br>
                                     <ul id="texto-color">MIS CURSOS </ul>
+                                         <?php }?>
 
                 <!-- inicio de usuario -->
                 <div id="usuario_div" hidden="true">
                 <input type="hidden" name="ddni" id="ddni" value="<?php echo  $_SESSION['usuario_id']; ?>">
     
                         <input name="nuevo_usuario" value="<?php echo $dni; ?>" id="nuevo_usuario" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON EL USUARIO" style="text-transform:lowercase;" onkeyup="javascript:this.value=this.value.toLowerCase();">
-                        <input name="nueva_clave" value="<?php echo $dni; ?>" id="nueva_clave" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+                        <input name="nueva_clave" value="<?php echo $dni; ?>" id="nueva_clave" class="input-text align-center" style="padding: 0; width: 200px" type="text"   maxlength="50" placeholder="REEMPLAZA CON LA CLAVE">
                         <button class="input-submit-green" id="btn_usuario_nuevo">
                             Enviar
                         </button>
