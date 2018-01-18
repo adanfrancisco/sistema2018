@@ -34,18 +34,41 @@ if($cantidad>0){
               $sql="INSERT INTO usuarios(usuario_nombre,usuario_clave,usuario_nivel,usuario_freg)
                VALUES('$usuario_nombre','".md5($usuario_clave)."',2,'$fecha')";
                echo $sql;
+               $resultado=$con->query($sql);
+               if($resultado){
+                 echo '<br>ingreso correcto en USUARIOS';
+                 //trae id
+                  $sql_trae_id="SELECT * FROM usuarios where usuario_nombre=".$ddni;
+                    $res_trae_id=$con->query($sql_trae_id);
+                      if($res_trae_id){
+                        while ($fila = $res_trae_id->fetch_array(MYSQLI_BOTH)) 
+                        {
+                          $id =$fila['usuario_id'];
+                        }          
+                          echo '<br> traje el ID';
+                                        //update profesores
+                          $sql_actualiza_profe="UPDATE profesores SET usuario_id=".$id." where dni=".$ddni;
+                          $res_actualiza=$con->query($sql_actualiza_profe);
+                            if($res_actualiza){
+                              echo '<br>ACTUALIZE profesores!!';
+                              echo '<br> Se asigno el usuario:<b> 
+                              '.$usuario_nombre.'</b> <br>clave<b> 
+                              '.$usuario_clave.'</b><br>a :<b> '.$nombre_profe.'</b>';
+                            }else{
+                              echo '<br>NO PUDE actualizar Profesores';
+                            }
+                      }else{
+                          echo '<br> NO traje el ID';
+                      }
 
-              //trae id
-               $sql_trae_id="SELECT * FROM usuarios where usuario_nombre=".$ddni;
+
+                }else{
+                 echo '<br>No pude INSERTAR EN USUARIOS';
+                }
+              
                
 
-               //update profesores
-               $sql_actualiza_profe="UPDATE profesores SET usuario_id=".$id;
-               
 
-            echo '<br> Se asigno el usuario:<b> 
-            '.$usuario_nombre.'</b> <br>clave<b> 
-            '.$usuario_clave.'</b><br>a :<b> '.$nombre_profe.'</b>';
         }   
 
 // $sql="INSERT INTO profe_novedad(profe,novedad,fecha,responsable) 

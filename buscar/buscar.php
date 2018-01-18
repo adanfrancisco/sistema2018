@@ -7,7 +7,7 @@
             $('#mensaje').toggle("swing");
             $('#licencia').hide();
             $('#clave').hide();
-             
+            $('#usuario_div').hide();
              });
             $("#btn_ya_aviso").on( "click", function() {  
                     console.log('esta avisando');
@@ -28,8 +28,9 @@
             $('#clave').toggle("swing");
             $('#licencia').hide();
             $('#mensaje').hide();
+            $('#usuario_div').hide();
              });
-                        $("#btn_nueva_clave").on( "click", function() {  
+                        $("#btn_asigna_usuario").on( "click", function() {  
                         console.log('esta cambiando la clave');
                         var ddni=0;
                         var xclave_nueva=$("#clave_nueva").val();
@@ -43,7 +44,7 @@
             $('#licencia').toggle("swing");
             $('#mensaje').hide();
             $('#clave').hide();
-
+            $('#usuario_div').hide();
              });
                 $("#btn_ya_licencia").on( "click", function() {  
                         console.log('esta avisando licencia');
