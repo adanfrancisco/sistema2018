@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-
 $usuario_nombre=$_POST['usuario_nombre'];
 $usuario_clave=$_POST['usuario_clave'];
 $ddni=$_POST['ddni'];
