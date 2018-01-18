@@ -24,7 +24,8 @@ if(isset($_SESSION['nivel'])){
                                 echo 'alumno';
                                 break;
                             case 2:
-                                    echo 'profesor';
+                                    echo 'profesor Cambie su clave';
+                                    // include('../profesores/cambia_clave.php')
                                 break;
                             case 1:
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';

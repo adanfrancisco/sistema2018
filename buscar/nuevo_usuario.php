@@ -65,22 +65,5 @@ if($cantidad>0){
                 }else{
                  echo '<br>No pude INSERTAR EN USUARIOS';
                 }
-              
-               
-
-
         }   
-
-// $sql="INSERT INTO profe_novedad(profe,novedad,fecha,responsable) 
-
-// //echo $sql;
-
-// $reg = $con->query($sql);
-
-// if($reg) {
-//                       echo "Se GUARDO la novedad.";
-//                   }else {
-//                         echo "<b>ha ocurrido un error y no se registraron los datos.</b><br>";
-//                         echo mysqli_error($con);
-//                   }
  ?>

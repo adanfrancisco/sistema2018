@@ -68,7 +68,7 @@
             $('#licencia').hide();
             $('#clave').hide();
         });
-            //nuevo_usuario nueva_clave
+//nuevo_usuario nueva_clave
             $("#btn_usuario_nuevo").on( "click", function() {  
                         console.log('esta asignando un usuario al DNI consultado');
 
@@ -79,10 +79,7 @@
 
                         //$('#licencia').text(ddni);
                         $.post("buscar/nuevo_usuario.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
-                        function(data){$("#usuario_div").html(data);});
-
-                        // $.post("buscar/mail_licencia.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni},
-                        // function(data){$("#licencia").html(data);});           
+                        function(data){$("#usuario_div").html(data);});        
              
              });
  
