@@ -1,4 +1,5 @@
 <script>
+//PRIMER DESARROLLO DE USUARIO Y CLAVE
     $("#cambia_clave").on( "click", function() {    
     $('#usuario_div').toggle("swing");
     $('#reabajo').hide();
@@ -17,6 +18,22 @@
                         function(data){$("#usuario_div").html(data);});        
              
              });
+
+//DESARROLLO DE CLAVE
+$("#modifica_clave").on( "click", function() {    
+            $('#clave').toggle("swing");
+            $('#reabajo').hide();
+             });
+                        $("#btn_asigna_usuario").on( "click", function() {  
+                        console.log('esta cambiando la clave');
+                        var ddni=0;
+                        var xclave_nueva=$("#clave_nueva").val();
+                        var ddni=$("#dddni").val();
+                        console.log('si'+ddni);
+                        //$('#clave').text('quiere cambiar clave a: '+ ddni + '-'+clave_nueva);
+                        $.post("buscar/cambia_clave.php", { xclave_nueva: xclave_nueva, ddni: ddni },
+                        function(data){$("#clave").html(data);});
+                        });             
 </script>
 <?php
 session_start();
@@ -71,7 +88,7 @@ if(isset($_SESSION['nivel'])){
                                     }
                                          if(!ctype_digit($dni)){
                                     ?>
-                                    <br><b>MODIFICAR</b> mi clave<br><br>
+                                    <br><b>MODIFICAR</b> <a href="#" id="modifica_clave">mi clave</a><br><br>
                                     <ul id="texto-color">MIS CURSOS </ul>
                                          <?php }?>
 
@@ -87,6 +104,18 @@ if(isset($_SESSION['nivel'])){
                    
                 </div> <!-- fin div usuario -->
 
+                <!-- inicio de clave -->
+                <div id="clave" hidden="true" >
+                  <input type="hidden" name="dddni" id="dddni" value="<?php echo  $_SESSION['dni']; ?>">
+
+                        <input name="clave_nueva" id="clave_nueva" class="input-text align-center" 
+                        style="padding: 0; width: 200px" type="text"  maxlength="50" placeholder="NUEVA CLAVE" >
+                        <button class="input-submit-green" id="btn_asigna_usuario">
+                            CAMBIAR
+                        </button>
+
+                </div>
+                <!-- fin div clave -->
                                     <?php
                                 break;
                             case 1:

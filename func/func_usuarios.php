@@ -49,7 +49,8 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
                         $_SESSION['usuario_id'] = $row['usuario_id']; // creamos la sesion "usuario_id" y le asignamos como valor el campo usuario_id
                         $_SESSION['usuario_nombre'] = $row["usuario_nombre"]; // creamos la sesion "usuario_nombre" y le asignamos como valor el campo usuario_nombre
                         $_SESSION['dni']=$row["dni"];
-
+                        $_SESSION['apellido']=$row["apellido"];
+                        $_SESSION['nombre']=$row["nombre"];
                         $_SESSION['nivel']=$row['usuario_nivel'];
                         echo $_SESSION['nivel'];
                     }

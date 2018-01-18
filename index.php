@@ -39,6 +39,14 @@
 								<p>Hola <strong>
 								<?php echo $_SESSION['usuario_nombre'];?>
                                     </strong> | <a href="logout.php">Salir</a></p>
+									<hr>
+									<?php
+									 echo 
+									 //$_SESSION['dni'].'-'.
+									 $_SESSION['apellido'].', '.
+									 $_SESSION['nombre'];
+									?>
+									
 
 							<?php
 							}
