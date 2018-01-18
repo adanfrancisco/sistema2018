@@ -7,7 +7,7 @@
                         console.log('esta asignando un usuario al DNI consultado');
 
                         var ddni=0;
-                        var ddni=$("#dddni").val();
+                        var ddni=$("#ddni").val();
                         var usuario_nombre=$("#nuevo_usuario").val();
                         var usuario_clave=$("#nueva_clave").val();
 
