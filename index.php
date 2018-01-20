@@ -269,9 +269,13 @@ alert('va a grabar');
 		function materias(){
 			$("#abajo").load('carreras/materia_listado.php');
 			$("reabajo").html('');
+			console.log('cargando CARRERAS en el que el Profesor dicta clase');
+		}
+		function materias_profe(){
+			$("#abajo").load('profesores/materia_listado.php');
+			$("reabajo").html('');
 			console.log('cargando materias');
 		}
-
 			  function ingresar(){
 				var xusuario = $('#usuario').val();
 				var xclave = $('#clave').val();

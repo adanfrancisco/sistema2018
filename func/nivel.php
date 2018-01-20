@@ -63,6 +63,7 @@ if(isset($_SESSION['nivel'])){
                                 break;
                             case 2:
                                 //profesor
+                                $_SESSION['mi_dni']=$_SESSION['dni'];
                                     $dni=$_SESSION['usuario_nombre'];
                                 ?>
 
@@ -90,7 +91,10 @@ if(isset($_SESSION['nivel'])){
                                          if(!ctype_digit($dni)){
                                     ?>
                                     <br><b>MODIFICAR</b> <a href="#" id="modifica_clave">mi clave</a><br><br>
+
                                     <ul id="texto-color">MIS CURSOS </ul>
+                                    <ul><a href="#" onclick="materias_profe()">Materias Por CARRERA</a></ul>
+                                    
                                          <?php }?>
 
                 <!-- inicio de usuario -->

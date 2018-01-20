@@ -1,6 +1,5 @@
 
-<script language="javascript">
-$(document).ready(function(){
+<script>
 
 
 /*$("#abajo").load('carga_carrera.php');
@@ -12,8 +11,8 @@ $(document).ready(function(){
                     $("#carrera option:selected").each(
                         function () {
                         carrera=$(this).val();
-                        //console.log('envio carrera '+ carrera);
-                        $.post("carreras/carrera_carga_cursos.php", { carrera: carrera },
+                        console.log('envio carrera '+ carrera);
+                        $.post("profesores/carrera_carga_cursos.php", { carrera: carrera },
                         function(data){$("#curso").html(data);});});});
 
 //selecciono la CARRERA y se cargan los CURSOS
@@ -22,16 +21,8 @@ $(document).ready(function(){
                         function () {
                         curso=$(this).val();
                         //console.log('envio curso '+ curso);
-                        $.post("carreras/carrera_cursos_tabla.php", { curso: curso },
+                        $.post("profesores/carrera_cursos_tabla.php", { curso: curso },
                         function(data){$("#reabajo").html(data);});});});
-
-//selecciono la CARRERA y se apaga LA GRILLA
-/*                    $("#carrera").change(function () {
-                    $("#carrera option:selected").each(
-                        function () {
-                        carrera=$(this).val();
-                        $.post("carreras/blanco.php", { carrera: carrera },
-                        function(data){$("#reabajo").html(data);});});});*/
 
                     $("#carrera").change(function () {
                     $("#carrera option:selected").each(
@@ -40,13 +31,15 @@ $(document).ready(function(){
                         //console.log('cargo demo');
                         $.post("carreras/blanco.php", { carrera: carrera },
                         function(data){$("#reabajo").html(data);});});});
-                  })
+
                         
 </script>
  
 
-    <?php echo '<div id="cue">';
-        include('cue.php');
+    <?php 
+    session_start();
+    echo '<div id="cue">';
+        //include('cue.php');
         include 'carga_carrera.php';
      echo  '</div>';
      ?>
@@ -56,7 +49,7 @@ $(document).ready(function(){
     
      <div id="carrera" ></div><div id="codigoCarrera"></div>
      
-     <div id="curso"><select><option></option>></select></div>
+     <div id="curso"><select><option></option></select></div>
      
      <div id="curso_tabla" align="center"></div>
       
