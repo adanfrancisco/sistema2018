@@ -1,0 +1,6 @@
+select * from usuarios inner JOIN profesores on usuarios.usuario_id=profesores.usuario_id inner join mat_pro on profesores.dni=mat_pro.profesor inner join curso_lectivo on mat_pro.curso_lectivo_id=curso_lectivo.idcursolectivo inner JOIN materia on materia.id_materia=mat_pro.materia where activo=1 and dni=
+
+-ver mis cursos
+-ver mis alumnos
+-asignar notas
+-disponer fecha parciales y volcado de notas parciales

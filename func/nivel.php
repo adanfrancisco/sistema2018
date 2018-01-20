@@ -58,10 +58,11 @@ if(isset($_SESSION['nivel'])){
                                  ';
                                 break;
                             case 3:
+                            //alumno
                                 echo 'alumno';
                                 break;
                             case 2:
-
+                                //profesor
                                     $dni=$_SESSION['usuario_nombre'];
                                 ?>
 
@@ -119,6 +120,7 @@ if(isset($_SESSION['nivel'])){
                                     <?php
                                 break;
                             case 1:
+                            //administrador
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';
 
                                     ?>
