@@ -26,9 +26,12 @@ if($cantidad>0){
       $res_actualiza=$con->query($sql_actualiza_profe);
         if($res_actualiza){
           //echo '<br>ACTUALIZE profesores!!';
-          echo '<br> Se asigno el usuario:<b> 
-          '.$usuario_nombre.'</b> <br>clave<b> 
-          '.$usuario_clave.'</b><br>a :<b> ';
+          echo '
+          <br>Usuario:<b> 
+          '.$usuario_nombre.'</b> 
+          <br>clave<b> 
+          '.$usuario_clave.'</b><br> ';
+          session_destroy();
         }else{
           echo '<br>NO PUDE actualizar usuarios';
         } 

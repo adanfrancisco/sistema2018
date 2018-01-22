@@ -15,7 +15,8 @@
 
                         //$('#licencia').text(ddni);
                         $.post("buscar/nuevo_usuario_por_id.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
-                        function(data){$("#usuario_div").html(data);});        
+                        function(data){$("#usuario_div").html(data);});   
+                        location.reload();     
              
              });
 
@@ -83,7 +84,7 @@ if(isset($_SESSION['nivel'])){
                                        // echo $_SESSION['dni'];
                                     ?>
                                     <br><b>CAMBIAR </b> 
-                                    <a href="#" onclick="cambia_clave()" 
+                                    <a href="#"" 
                                     id="cambia_clave" value=<?php echo  $_SESSION['usuario_id']; ?>> 
                                     usuario y clave </a>
                                     <?php
