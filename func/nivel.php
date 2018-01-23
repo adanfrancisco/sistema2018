@@ -75,7 +75,7 @@ if(isset($_SESSION['nivel'])){
                                     <b>EDITAR</b> mis datos
                                     <font size=3 color="red">
                                     <a href="#" onclick="editaprofe_profesor2()" 
-                                    id="edita_profe"><?php echo   $_SESSION['dni']; ?> 
+                                    id="edita_profex"><?php echo   $_SESSION['dni']; ?> 
                                     </a>
                                     </font> 
                                     <?php 

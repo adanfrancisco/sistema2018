@@ -91,7 +91,7 @@
 	function editaprofe_profesor2()
 	{ 
 
-		var xxdni=$("#edita_profe").text();
+		var xxdni=$("#edita_profex").text();
 
 		//$("#reabajo").html(data);
 		//$("#dni").text($("#edita_profe").text());
