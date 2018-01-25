@@ -129,19 +129,17 @@ required="">
     </SELECT>
 <input name="telfijo" id="telfijo" class="input-text align-center" style="padding: 0; width: 260px" 
 type="number"  value="" maxlength="10" placeholder="NRO FIJO" style="text-transform:uppercase;" 
-onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"required="no">  
+onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">  
 
 <input name="telcelu" id="telcelu" class="input-text align-center" style="padding: 0; width: 260px" 
 type="text"  value="" maxlength="10" placeholder="NRO CELULAR" style="text-transform:uppercase;" 
 onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">   
 
 <input name="libro" id="libro" class="input-text align-center" style="padding: 0; width: 260px" 
-type="text"  value="" maxlength="10" placeholder="LIBRO" style="text-transform:uppercase;"
- onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">  
+type="text"  value="" maxlength="10" placeholder="LIBRO" onfocus="javascript:this.value='';">  
 
 <input name="folio" id="folio" class="input-text align-center" style="padding: 0; width: 260px" 
-type="number" id="clave" value="" maxlength="10" placeholder="FOLIO" style="text-transform:uppercase;"
- onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">  
+type="number" id="clave" value="" maxlength="10" placeholder="FOLIO" onfocus="javascript:this.value='';">  
 
     
  <input name="email" id="email" alt="EMAIL" class="input-text align-center" style="padding: 0; width: 260px" type="email"  value="" maxlength="50" placeholder="mimail@mail.com" style="text-transform:lowercase;" onkeyup="javascript:this.value=this.value.toLowerCase();"  onfocus="javascript:this.value='';">  
