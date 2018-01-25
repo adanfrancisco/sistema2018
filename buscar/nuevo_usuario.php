@@ -44,16 +44,16 @@ if($cantidad>0){
                         {
                           $id =$fila['usuario_id'];
                         }          
-                         // echo '<br> traje el ID: '.$id;
+                          echo '<br> traje el ID: '.$id;
                                         //update profesores
                           $sql_actualiza_profe="UPDATE profesores SET usuario_id=".$id." where dni=".$ddni;
-                          //echo $sql_actualiza_profe;
+                          echo $sql_actualiza_profe;
                           $res_actualiza=$con->query($sql_actualiza_profe);
                             if($res_actualiza){
                               //echo '<br>ACTUALIZE profesores!!';
                               echo '<br> Se asigno el usuario:<b> 
                               '.$usuario_nombre.'</b> <br>clave<b> 
-                              '.$usuario_clave.'</b>';
+                              '.$usuario_clave.'</b><br>a :<b> '.$nombre_profe.'</b>';
                             }else{
                               echo '<br>NO PUDE actualizar Profesores';
                             }

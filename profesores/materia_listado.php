@@ -34,7 +34,16 @@
 
                         
 </script>
- 
+ <style>
+ #carrera{  /*padre*/
+	overflow: hidden;
+    float:right
+	
+}
+#carrera, #materia{  /*hijos*/
+	float: left;
+}
+ </style>
 
     <?php 
     session_start();

@@ -90,15 +90,14 @@ return (fecha);
 <br><input name="dni" id="dni" class="input-text align-center" style="padding: 0; width: 260px" type="number" id="clave" value="" maxlength="10" placeholder="N DOCUMENTO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';" 
 required="">
 
-<input name="legajo" id="legajo" class="input-text align-center" style="padding: 0; width: 260px" type="number" id="clave" value="" maxlength="50" placeholder="NRO LEGAJO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">
-
 <input name="apellido" id="apellido" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="APELLIDO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
 required="">
 
 <input name="nombre" id="nombre" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="NOMBRE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
 required="" >
 
-    
+<input name="fechan" id="fechan" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="NACIO EL 17/11/1973" style="text-transform:uppercase;" onKeyUp = "this.value=formateafecha(this.value);" onfocus="javascript:this.value='';"
+required="">     
       
     <br><label>Masculino:</label> <input type="radio" name="sexo" value="1" checked>    
     <label>Femenino:</label> <input type="radio" name="sexo"  value="2">
@@ -128,25 +127,30 @@ required="" >
         ?>
        
     </SELECT>
-<input name="telfijo" id="telfijo" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="NRO FIJO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
-required="">  
+<input name="telfijo" id="telfijo" class="input-text align-center" style="padding: 0; width: 260px" 
+type="number"  value="" maxlength="10" placeholder="NRO FIJO" style="text-transform:uppercase;" 
+onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"required="no">  
 
-<input name="telcelu" id="telcelu" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="NRO CELULAR" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
-required="">   
+<input name="telcelu" id="telcelu" class="input-text align-center" style="padding: 0; width: 260px" 
+type="text"  value="" maxlength="10" placeholder="NRO CELULAR" style="text-transform:uppercase;" 
+onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">   
 
-<input name="fechan" id="fechan" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="NACIO EL 17/11/1973" style="text-transform:uppercase;" onKeyUp = "this.value=formateafecha(this.value);" onfocus="javascript:this.value='';"
-required=""> 
+<input name="libro" id="libro" class="input-text align-center" style="padding: 0; width: 260px" 
+type="text"  value="" maxlength="10" placeholder="LIBRO" style="text-transform:uppercase;"
+ onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">  
+
+<input name="folio" id="folio" class="input-text align-center" style="padding: 0; width: 260px" 
+type="number" id="clave" value="" maxlength="10" placeholder="FOLIO" style="text-transform:uppercase;"
+ onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">  
+
     
-<input name="fechai" id="fechai" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="ING ESCUELA 17/11/1973" style="text-transform:uppercase;" onKeyUp = "this.value=formateafecha(this.value);" onfocus="javascript:this.value='';"> 
-
-<input name="fechad" id="fechad" alt="FECHA DE INGRESO A LA DOCENCIA" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="ING. DOC. 17/11/1973" style="text-transform:uppercase;" onKeyUp = "this.value=formateafecha(this.value);" onfocus="javascript:this.value='';"> 
-
  <input name="email" id="email" alt="EMAIL" class="input-text align-center" style="padding: 0; width: 260px" type="email"  value="" maxlength="50" placeholder="mimail@mail.com" style="text-transform:lowercase;" onkeyup="javascript:this.value=this.value.toLowerCase();"  onfocus="javascript:this.value='';">  
+ 
  <input type=radio name="nada"  id="nada" required=""> 
 
 </div>
 
-<button class="input-submit-blue" id="btn_grabar"  onclick="grabaprofe()" >Grabar</button>	
+<button class="input-submit-blue" id="btn_grabar"  onclick="graba_alumno()" >Grabar</button>	
 <button class="input-submit-green" id="cerrar"  onclick="saleprofe()" >Cerrar</button>
 
     </form> 

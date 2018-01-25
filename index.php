@@ -91,11 +91,11 @@
 	function editaprofe_profesor2()
 	{ 
 
-		var xxdni=$("#edita_profex").text();
+		var xxdni=$("#edita_profe").text();
 
 		//$("#reabajo").html(data);
 		//$("#dni").text($("#edita_profe").text());
-		//$("#reabajo").text(xxdni);
+		$("#abajo").load('carreras/blanco.php');
 
 				$.post("buscar/editaprofe.php", {xxdni: xxdni}, 
 					function(data){$("#reabajo").html(data);
@@ -193,6 +193,79 @@ alert('va a grabar');
 
      
     }
+	function graba_alumno(){
+      var xdni=0;
+      if(!$("#dni").val()){
+      	xdni=0;
+      }else{
+      	xdni=$("#dni").val();
+      };
+      
+      var xapellido=$("#apellido").val();
+      var xnombre=$("#nombre").val();
+	  var xlibro=0;
+	  if(!$("#libro").val()){
+		xlibro=0;
+      }else{
+		xlibro=$("#libro").val();
+      };
+	  var xfolio=0;
+	  if(!$("#folio").val()){
+		xfolio=0;
+      }else{
+		xfolio=$("#folio").val();
+      };
+	  
+	  var xfechan=$("#fechan").val();
+      //var sexo($('input:radio[name=sexo]:checked').val()
+      	var xsexo=document.getElementsByName("sexo");
+        // Recorremos todos los valores del radio button para encontrar el
+        // seleccionado
+        for(var i=0;i<xsexo.length;i++)
+        {
+            if(xsexo[i].checked)
+                xsexo=xsexo[i].value;
+        }
+
+      var xdomicilio=$("#domicilio").val();
+      var xlocalidad=$("#localidad").val();
+      var xtelfijo=$("#telfijo").val();
+      var xtelcelu=$("#telcelu").val();
+      var xfechan=$("#fechan").val();
+      
+      var xemail=$("#email").val();
+
+		console.log('presiono enviar- ahora el mensaje');
+		{
+       alert(xdni +','+xapellido+','+
+      	xnombre+','+xsexo+','+xdomicilio+','+xlocalidad+','+
+      	xtelfijo+','+xtelcelu+','+xfechan
+		  +','+xlibro+','+xfolio+','+xemail);
+
+
+                                       
+//alert('va a grabar');
+        // $.ajax({                        
+        //    type: "POST",                 
+        //    url: "alumnos/graba_alumno.php",                    
+        //    data: $("#formulario").serialize(),
+        //     async: false,
+        //    success: function(data)            
+        //    {
+        //      $('#reabajo').html(data);   
+        //      console.log('enviando datos..');     
+        //    },
+        //    error: function(data) {
+        //     $("#reabajo").text(data + " Fallo el Alta");
+        //     console.log('no se completo el envio');
+        //     $("#reabajo").fadeIn("slow");
+        //     $("#reabajo").delay(2000).fadeOut(1000);
+        // }
+        //  });
+    								}
+
+     
+    }
       function actualizaprofe(){
 
       var xdni=0;
@@ -266,15 +339,22 @@ alert('va a grabar');
 			$("#reabajo").load('carreras/blanco.php');
 			//$("#abajo").load('prueba.html');
 		}
+		function alta_alumno(){
+			//alert('si');
+			console.log('carga alta de Alumno');
+			$("#abajo").load('alumnos/alta_alumno.php');
+			$("#reabajo").load('carreras/blanco.php');
+			//$("#abajo").load('prueba.html');
+		}
 		function materias(){
 			$("#abajo").load('carreras/materia_listado.php');
 			$("reabajo").html('');
-			console.log('cargando CARRERAS en el que el Profesor dicta clase');
+			console.log('cargando Alta Alumnos ');
 		}
 		function materias_profe(){
 			$("#abajo").load('profesores/materia_listado.php');
-			$("reabajo").html('');
-			console.log('cargando materias');
+			$("reabajo").load('carreras/blanco.php');
+			console.log('cargando MIS materias');
 		}
 			  function ingresar(){
 				var xusuario = $('#usuario').val();

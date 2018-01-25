@@ -3,6 +3,7 @@
     $("#cambia_clave").on( "click", function() {    
     $('#usuario_div').toggle("swing");
     $('#reabajo').hide();
+    $('#abajo').hide();
      });
     //nuevo_usuario nueva_clave
             $("#btn_usuario_nuevo").on( "click", function() {  
@@ -15,8 +16,7 @@
 
                         //$('#licencia').text(ddni);
                         $.post("buscar/nuevo_usuario_por_id.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
-                        function(data){$("#usuario_div").html(data);});   
-                        location.reload();     
+                        function(data){$("#usuario_div").html(data);});        
              
              });
 
@@ -56,7 +56,9 @@ if(isset($_SESSION['nivel'])){
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>
 
                                  <ul><a href="#" onclick="materias()">Materias Por CARRERA</a></ul>
+                                 <ul><a href="#" onclick="alta_alumno()">Alta Alumno</a></ul>
                                  ';
+
                                 break;
                             case 3:
                             //alumno
@@ -75,7 +77,7 @@ if(isset($_SESSION['nivel'])){
                                     <b>EDITAR</b> mis datos
                                     <font size=3 color="red">
                                     <a href="#" onclick="editaprofe_profesor2()" 
-                                    id="edita_profex"><?php echo   $_SESSION['dni']; ?> 
+                                    id="edita_profe"><?php echo   $_SESSION['dni']; ?> 
                                     </a>
                                     </font> 
                                     <?php 
@@ -84,7 +86,7 @@ if(isset($_SESSION['nivel'])){
                                        // echo $_SESSION['dni'];
                                     ?>
                                     <br><b>CAMBIAR </b> 
-                                    <a href="#"" 
+                                    <a href="#" onclick="cambia_clave()" 
                                     id="cambia_clave" value=<?php echo  $_SESSION['usuario_id']; ?>> 
                                     usuario y clave </a>
                                     <?php
@@ -143,6 +145,7 @@ if(isset($_SESSION['nivel'])){
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>
 
                                  <ul><a href="#" onclick="materias()">Materias Por CARRERA</a></ul>
+                                 <ul><a href="#" onclick="alta_alumno()">Alta Alumno</a></ul>
 
 
                               <!--   <ul>Asociar Profesor a Materia</ul>

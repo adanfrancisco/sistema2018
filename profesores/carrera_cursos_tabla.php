@@ -30,10 +30,14 @@ echo 'curso nro: '.$curso;
 ######################################################################
 
 //listado de materias con profesor
-$consultacurso="select * from carrera left join curso on carrera.`id_carrera`= curso.`carrera_id` LEFT join materia on curso.`idcurso`=materia.`materia_curso` left join mat_pro on mat_pro.materia=materia.`id_materia` inner join profesores on mat_pro.`profesor`=profesores.`dni`
-left join mat_pro_novedades on mat_pro.id_matpro=mat_pro_novedades.matpro_id
-left join revista on revista.id_revista=mat_pro_novedades.revista
-where curso.idcurso=".$curso." AND mat_pro.activo=1";
+$consultacurso="select * from carrera 
+left join curso on carrera.`id_carrera`= curso.`carrera_id` 
+LEFT join materia on curso.`idcurso`=materia.`materia_curso` 
+left join mat_pro on mat_pro.materia=materia.`id_materia` 
+inner join profesores on mat_pro.`profesor`=profesores.`dni` 
+left join mat_pro_novedades on mat_pro.id_matpro=mat_pro_novedades.matpro_id 
+left join revista on revista.id_revista=mat_pro_novedades.revista 
+where dni=".$_SESSION['dni']." AND curso_lectivo_id=".$curso." AND mat_pro.activo=1";
 
  //listado de materias
 /* 
