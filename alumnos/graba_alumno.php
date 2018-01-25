@@ -5,6 +5,7 @@ include('../acceso_db.php');
 //Guarda los valores de los campos en variables, siempre y cuando se haya enviado el formulario, sino se guardará null.
 //
 $dni=isset($_POST['dni']) ? $_POST['dni']:null;
+
 $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : null;
 $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
 $sexo = isset($_POST['sexo']) ? $_POST['sexo'] : null;
@@ -19,11 +20,12 @@ $idcarga= $_SESSION['usuario_id'];
 $email = isset($_POST['email']) ? (($_POST['email'])) : null;
 
 //echo $dni. '-'.$apellido;
-       $sql= "insert into profesores(
-           dni,legajo,apellido,nombre,genero,domicilio,localidad,telefono,
-           celular,usuario_id,fecha_nac,fecha_ing_escuela,fecha_ing_doc,idcarga,email,persona_tipo) ";
-       $sql=$sql."values(".$dni.",".$legajo.",'".$apellido."','".$nombre."',".$sexo.",'".$domicilio."',".$localidad.",'".$telfijo."','".$telcelu."',0,'".$fechan."','".$fechai."
-       ','".$fechad."',$idcarga,'$email',1)";
+       $sql= "insert into alumno(
+           dni,usuario_id,apellido,nombre,fecha_nac,genero,localidad,domicilio,tel_fijo,
+           tel_celu,email,libro,folio,idcarga,activo) ";
+       $sql=$sql."values(".$dni.",0,'".$apellido."','".$nombre."'
+       ,'".$fechan."',".$sexo.",".$localidad.",'".$domicilio."','".$telfijo."'
+       ,'".$telcelu."','$email','$libro',$folio,$idcarga,1)";
        //echo $idcarga;
 echo $sql;
 // $reg = $con->query($sql);

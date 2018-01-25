@@ -236,36 +236,37 @@ alert('va a grabar');
       var xemail=$("#email").val();
 
 		console.log('presiono enviar- ahora el mensaje');
-		{
-       alert(xdni +','+xapellido+','+
-      	xnombre+','+xsexo+','+xdomicilio+','+xlocalidad+','+
-      	xtelfijo+','+xtelcelu+','+xfechan
-		  +','+xlibro+','+xfolio+','+xemail);
+		if(xdni==0){
+			alert ('faltan datos'+xdni+xapellido);
+		}else{
+    //    alert(xdni +','+xapellido+','+
+    //   	xnombre+','+xsexo+','+xdomicilio+','+xlocalidad+','+
+    //   	xtelfijo+','+xtelcelu+','+xfechan
+	// 	  +','+xlibro+','+xfolio+','+xemail);
 
 
                                        
 //alert('va a grabar');
-        // $.ajax({                        
-        //    type: "POST",                 
-        //    url: "alumnos/graba_alumno.php",                    
-        //    data: $("#formulario").serialize(),
-        //     async: false,
-        //    success: function(data)            
-        //    {
-        //      $('#reabajo').html(data);   
-        //      console.log('enviando datos..');     
-        //    },
-        //    error: function(data) {
-        //     $("#reabajo").text(data + " Fallo el Alta");
-        //     console.log('no se completo el envio');
-        //     $("#reabajo").fadeIn("slow");
-        //     $("#reabajo").delay(2000).fadeOut(1000);
-        // }
-        //  });
-    								}
+         $.ajax({                        
+            type: "POST",                 
+            url: "alumnos/graba_alumno.php",                    
+            data: $("#formulario").serialize(),
+             async: false,
+            success: function(data)            
+            {
+              $('#reabajo').html(data);   
+              console.log('enviando datos de ALUMNO..');     
+            },
+            error: function(data) {
+             $("#reabajo").text(data + " Fallo el Alta");
+             console.log('no se completo el envio');
+
+         }
+          });
+    	}//fin SI
 
      
-    }
+    }//fin graba_alumno
       function actualizaprofe(){
 
       var xdni=0;
