@@ -8,7 +8,8 @@ include('../acceso_db.php');
     inner JOIN materia on materia.id_materia=mat_pro.materia 
     inner join curso on curso.idcurso=curso_lectivo.curso 
     inner join carrera on carrera.id_carrera=curso.carrera_id 
-    where activo=1 and dni=".$_SESSION['mi_dni'];
+    where activo=1 and dni=".$_SESSION['dni'];
+    //echo $consulta;
     //echo $_SESSION['mi_dni'];
         if ($resultado = $con->query($consulta)) 
         {
