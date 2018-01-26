@@ -11,5 +11,28 @@ btn = crearElemento('button','num_parrafos','agrega tus clases','Numero parrafos
 body = document.body;
 body.appendChild(btn);
 
-
-algo de prueba
+GRABAR NUEVO
+//echo $dni. '-'.$apellido;
+       $sql= "insert into alumno(
+           dni,usuario_id,apellido,nombre,fecha_nac,genero,localidad,domicilio,tel_fijo,
+           tel_celu,email,libro,folio,idcarga,activo) ";
+       $sql=$sql."values(".$dni.",0,'".$apellido."','".$nombre."'
+       ,'".$fechan."',".$sexo.",".$localidad.",'".$domicilio."','".$telfijo."'
+       ,'".$telcelu."','$email','$libro',$folio,$idcarga,1)";
+       //echo $idcarga;
+//echo $sql;
+$sqlBusca="select * from alumno where dni=".$dni;
+$encuentra=$con->query($sqlBusca);
+    if($encuentra->num_rows==1){
+        echo 'El DNI <b><a href=# onclick="edita_alumno()" id="edita_alumno">'.$dni.'</a></b> pertenece a: ';
+        while ($fila = $encuentra->fetch_array(MYSQLI_BOTH)) 
+        {    echo '<b>'.$fila['apellido'].','.$fila['nombre'].'</b>';
+        }
+    }else
+$reg = $con->query($sql);
+if($reg) {
+                      echo "Datos ingresados correctamente.";
+                  }else {
+                        echo "<b>ha ocurrido un error y no se registraron los datos.</b><br>";
+                        //echo mysqli_error($con);
+                  }

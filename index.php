@@ -104,6 +104,19 @@
 					   ); 
 	}
 
+	function edita_alumno()
+	{ 
+
+		var xxdni=$("#edita_alumno").text();
+
+		$("#reabajo").load('carreras/blanco.php');
+
+				$.post("alumnos/edita_alumno.php", {xxdni: xxdni}, 
+					function(data){$("#abajo").html(data);
+				window.location="#edicion";
+			}
+					   ); 
+	}
 		function buscar() {
 			var textoBusqueda = $("input#busqueda").val();
 			if (textoBusqueda != "") {
@@ -320,7 +333,7 @@ alert('va a grabar');
            success: function(data)            
            {
              $('#reabajo').html(data);   
-             console.log('actualizando datos..');     
+             console.log('actualizando datos del PROFE..');     
            },
            error: function(data) {
             $("#reabajo").text(data + " Fallo  la Actualizacion");
@@ -332,6 +345,73 @@ alert('va a grabar');
 
      
     }
+
+function actualizar_alumno(){
+
+var xdni=0;
+if(!$("#dni").val()){
+	xdni=0;
+}else{
+	xdni=$("#dni").val();
+};
+var xlegajo=0;
+  if(!$("#legajo").val()){
+	  xlegajo=0;
+  }else{
+	  xlegajo=$("#legajo").val();
+  }
+var xapellido=$("#apellido").val();
+var xnombre=$("#nombre").val();
+//var sexo($('input:radio[name=sexo]:checked').val()
+	var xsexo=document.getElementsByName("sexo");
+  // Recorremos todos los valores del radio button para encontrar el
+  // seleccionado
+  for(var i=0;i<xsexo.length;i++)
+  {
+	  if(xsexo[i].checked)
+		  xsexo=xsexo[i].value;
+  }
+
+var xdomicilio=$("#domicilio").val();
+var xlocalidad=$("#localidad").val();
+var xtelfijo=$("#telfijo").val();
+var xtelcelu=$("#telcelu").val();
+var xfechan=$("#fechan").val();
+var xemail=$("#email").val();
+var xlibro=$("#libro").val();
+var xfolio=$("#folio").val();
+
+  console.log('presiono enviar- ahora el mensaje');
+  if((xdni==0)||(xapellido=='')||(xnombre=='')||(xtelcelu=='')||(xfechan=='')){
+	  alert('faltan datos!!');}else
+	{
+		// alert(xdni +','+xapellido+','+
+		// xnombre+','+xsexo+','+xdomicilio+','+xlocalidad+','+
+		// xtelfijo+','+xtelcelu+','+xfechan+','+xemail+','+
+		// xlibro+','+xfolio);
+
+
+									
+		/*alert('va a actualizar ALUMNO');*/
+		$.ajax({                        
+			type: "POST",                 
+			url: "alumnos/actualiza_alumno.php",                    
+			data: $("#formulario3").serialize(),
+		
+			success: function(data)            
+				{
+					$('#reabajo').html(data);   
+					console.log('actualizando datos. de ALUMNO');     
+				},
+			error: function(data) 
+				{
+					$("#reabajo").text(data + " Fallo  la Actualizacion");
+					console.log('no se completo el envio');
+
+				}
+			});
+	}
+}
 
 		function altaprofe(){
 			//alert('si');

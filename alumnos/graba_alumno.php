@@ -27,16 +27,21 @@ $email = isset($_POST['email']) ? (($_POST['email'])) : null;
        ,'".$fechan."',".$sexo.",".$localidad.",'".$domicilio."','".$telfijo."'
        ,'".$telcelu."','$email','$libro',$folio,$idcarga,1)";
        //echo $idcarga;
-echo $sql;
-// $reg = $con->query($sql);
-// if($reg) {
-//                       echo "Datos ingresados correctamente.";
-
-// //include("cuantosprofes.php");
-
-//                   }else {
-//                         echo "<b>ha ocurrido un error y no se registraron los datos.</b><br>";
-//                         //echo mysqli_error($con);
-//                   }
-
+//echo $sql;
+$sqlBusca="select * from alumno where dni=".$dni;
+$encuentra=$con->query($sqlBusca);
+    if($encuentra->num_rows==1){
+        echo 'El DNI <b><a href=# onclick="edita_alumno()" id="edita_alumno">'.$dni.'</a></b> pertenece a: ';
+        while ($fila = $encuentra->fetch_array(MYSQLI_BOTH)) 
+        {    echo '<b>'.$fila['apellido'].','.$fila['nombre'].'</b>';
+        }
+    }else{
+$reg = $con->query($sql);
+if($reg) {
+                      echo "Datos ingresados correctamente.";
+                  }else {
+                        echo "<b>ha ocurrido un error y no se registraron los datos.</b><br>";
+                        //echo mysqli_error($con);
+                  }
+        }
 ?>
