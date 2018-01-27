@@ -42,16 +42,16 @@ $folio = isset($_POST['folio']) ? (($_POST['folio'])) : null;
        email='$email',libro='$libro', folio='$folio' WHERE dni=$dni ";
        //echo $idcarga;
   
-echo $sql;
-// $reg = $con->query($sql);
-// if($reg) {
-//                       echo " - Datos ACTUALIZADOS ";
+//echo $sql;
+$reg = $con->query($sql);
+if($reg) {
+                      echo " - Datos ACTUALIZADOS ";
 
-// //include("cuantosprofes.php");
+//include("cuantosprofes.php");
 
-//                   }else {
-//                         echo "<b>ha ocurrido un error y no se ACTUALIZARON los datos.</b><br>";
-//                         echo mysqli_error($con);
-//                   }
+                  }else {
+                        echo "<b>ha ocurrido un error y no se ACTUALIZARON los datos.</b><br>";
+                        echo mysqli_error($con);
+                  }
 
 ?>

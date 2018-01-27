@@ -36,3 +36,6 @@ if($reg) {
                         echo "<b>ha ocurrido un error y no se registraron los datos.</b><br>";
                         //echo mysqli_error($con);
                   }
+mysql -u root -p
+
+ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));

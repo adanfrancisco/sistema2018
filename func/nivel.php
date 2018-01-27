@@ -141,11 +141,11 @@ if(isset($_SESSION['nivel'])){
 
                                 
                                 <ul><a href="#" onclick="altaprofe()">Alta de Profesores</a></ul>
+                                <ul><a href="#" onclick="alta_alumno()">Alta Alumno</a></ul>
 
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>
-
                                  <ul><a href="#" onclick="materias()">Materias Por CARRERA</a></ul>
-                                 <ul><a href="#" onclick="alta_alumno()">Alta Alumno</a></ul>
+                                 
 
 
                               <!--   <ul>Asociar Profesor a Materia</ul>

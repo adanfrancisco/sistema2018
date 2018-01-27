@@ -19,8 +19,8 @@
                         $.post("buscar/grabaaviso.php", { xaviso: xaviso, ddni: ddni },
                         function(data){$("#mensaje").html(data);});
                         
-                        $.post("buscar/mail_aviso.php", { xaviso: xaviso, ddni: ddni },
-                        function(data){$("#mensaje").html(data);});
+                        // $.post("buscar/mail_aviso.php", { xaviso: xaviso, ddni: ddni },
+                        // function(data){$("#mensaje").html(data);});
                         }
                         );
 //DESARROLLO DE CLAVE
@@ -58,8 +58,8 @@
                         $.post("buscar/licencia.php", { desde: desde, dias:dias, ddni: ddni },
                         function(data){$("#licencia").html(data);});
 
-                        $.post("buscar/mail_licencia.php", { desde: desde, dias:dias, ddni: ddni },
-                        function(data){$("#licencia").html(data);});
+                        // $.post("buscar/mail_licencia.php", { desde: desde, dias:dias, ddni: ddni },
+                        // function(data){$("#licencia").html(data);});
                         });
 //DESARROLLO DEL USUARIO
         $("#btn_usuario").on( "click", function() {  
