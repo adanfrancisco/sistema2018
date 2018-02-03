@@ -37,6 +37,7 @@ $("#modifica_clave").on( "click", function() {
                         });             
 </script>
 <?php
+
 session_start();
 //echo 'el nivel de usuario es:'.$_SESSION['nivel'];
 if(isset($_SESSION['nivel'])){
@@ -129,7 +130,7 @@ if(isset($_SESSION['nivel'])){
                             case 1:
                             //administrador
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';
-
+                                //echo 'hola';
                                     ?>
 
                                 <ul id="texto-color">BUSQUEDA </ul>

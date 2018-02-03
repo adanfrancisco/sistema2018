@@ -16,7 +16,7 @@ if ($resultado = $con->query($sql)){
 
 	if($resultado->num_rows > 0){
 		//echo 'clave nueva:'.$clave_nueva.'<br>';
-		$sql="UPDATE usuarios set usuario_clave='".md5($clave_nueva)."'";
+		$sql="UPDATE usuarios set usuario_clave='".md5($clave_nueva)."' where usuario_id=".$usuario;
 
 		$reg=$con->query($sql);
 		if($reg) {

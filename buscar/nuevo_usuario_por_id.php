@@ -3,9 +3,13 @@ session_start();
 
 $usuario_nombre=$_POST['usuario_nombre'];
 $usuario_clave=$_POST['usuario_clave'];
-$ddni=$_POST['ddni'];
+
+$ddni=$_POST['ddni'];// es el id del usuario en la tabla USUARIOS
+
 $fecha= date("d-m-Y ");;
 $usuario=$_SESSION['usuario_id'];
+
+//echo $usuario_nombre.$usuario_clave.$ddni;
 
 include('../acceso_db.php');
 //BUSCO USUARIO, SI EXISTE DIGO QUE EXISTE Y QUE MODIFIQUE LA CLAVE

@@ -396,8 +396,4 @@ if((xdni==0)||(xapellido=='')||(xnombre=='')||(xtelcelu=='')||(xfechan=='')){
 
         }
 
-
-
-
-
     </script>

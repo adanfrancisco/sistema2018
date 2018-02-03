@@ -102,7 +102,7 @@ required="">
     <br><label>Masculino:</label> <input type="radio" name="sexo" value="1" checked>    
     <label>Femenino:</label> <input type="radio" name="sexo"  value="2">
 
-<input name="domicilio" id="domicilio"class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="DOMICILIO CALLE NRO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">
+<input name="domicilio" id="domicilio"class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="60" placeholder="DOMICILIO CALLE NRO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">
 
     
 
