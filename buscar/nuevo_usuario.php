@@ -11,7 +11,7 @@ include('../acceso_db.php');
 //BUSCO USUARIO, SI EXISTE DIGO QUE EXISTE Y QUE MODIFIQUE LA CLAVE
 // SI NO EXISTE LO DOY DE ALTA EN LA TABLA USUARIOS
 $sql='SELECT * FROM usuarios inner JOIN profesores on profesores.usuario_id=usuarios.usuario_id where dni='.$ddni;
-
+//echo $sql;
 $tieneUsuario=$resultado = $con->query($sql);
 $cantidad=$resultado->num_rows;
 if($cantidad>0){    
@@ -47,7 +47,7 @@ if($cantidad>0){
                           echo '<br> traje el ID: '.$id;
                                         //update profesores
                           $sql_actualiza_profe="UPDATE profesores SET usuario_id=".$id." where dni=".$ddni;
-                          echo $sql_actualiza_profe;
+                          //echo $sql_actualiza_profe;
                           $res_actualiza=$con->query($sql_actualiza_profe);
                             if($res_actualiza){
                               //echo '<br>ACTUALIZE profesores!!';
