@@ -40,7 +40,7 @@
     float:right
 	
 }
-#carrera, #materia{  /*hijos*/
+#carrera, #curso_lectivo{  /*hijos*/
 	float: left;
 }
  </style>
@@ -59,6 +59,7 @@
      <div id="carrera" ></div><div id="codigoCarrera"></div>
      
      <div id="curso"><select><option></option></select></div>
+     <div id="curso_lectivo"><select><option></option></select></div>
      
      <div id="curso_tabla" align="center"></div>
       
