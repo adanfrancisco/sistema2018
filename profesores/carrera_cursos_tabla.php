@@ -26,7 +26,7 @@
 
 $curso=$_POST['curso'];
 ######################################################################
-echo 'curso nro: '.$curso;
+echo 'idcursolectivo nro: '.$curso;
 ######################################################################
 
 //listado de materias con profesor
