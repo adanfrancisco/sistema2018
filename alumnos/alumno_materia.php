@@ -4,7 +4,7 @@ lo ideal seria que el alumno
 - cambie su clave
 - se inscriba en las materias que desea.. 
 
-El sistema deberi:
+El sistema deberia:
 - comprobar si tiene aprobada las cursadas
 - personalizar la inscripcion en funcion de los finales aprobados
 - permitir el registro del alumno en examenes finales (comprobando correlativas)
