@@ -60,12 +60,33 @@ function edita_alumno()
             $("#reabajo").html('<p>INGRESE SU BUSQUEDA</p>');
             };
     };
-
+    function buscar_alumno() {
+        var textoBusqueda = $("input#busqueda").val();
+        if (textoBusqueda != "") {
+            $.post("alumnos/buscar.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+                $("#resultadoBusqueda").html(mensaje);
+                $("#reabajo").html('');
+                
+                                }); 
+        } else { 
+            $("#resultadoBusqueda").html('');
+            $("#reabajo").html('<p>INGRESE SU BUSQUEDA</p>');
+            };
+    };
     function enviar(){
         //alert('si');
         $("#reabajo").load('carreras/blanco.php');
         console.log('carga la busqueda');
         $("#abajo").load('buscar/index.php');
+        //$(':input').focus();
+        //$("#abajo").load('prueba.html');
+}
+
+function enviar_alumno(){
+        //alert('si');
+        $("#reabajo").load('carreras/blanco.php');
+        console.log('carga la busqueda');
+        $("#abajo").load('alumnos/index.php');
         //$(':input').focus();
         //$("#abajo").load('prueba.html');
 }

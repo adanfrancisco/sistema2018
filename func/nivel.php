@@ -136,6 +136,7 @@ if(isset($_SESSION['nivel'])){
                                 <ul id="texto-color">BUSQUEDA </ul>
 
                                 <ul ><a href="#" onclick="enviar()" >Buscar Profesor</a></ul>
+                                <ul ><a href="#" onclick="enviar_alumno()" >Buscar Alumno</a></ul>
                                 <ul ><a href="#" onclick="novedad()" >VER Novedades</a></ul>
 
                                 <ul id="texto-color">Gestion </ul>

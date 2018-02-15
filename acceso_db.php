@@ -9,18 +9,18 @@ $host_db = "localhost"; // Host de la BD
     $nombre_db = "c0990267_is93"; // Nombre de la BD
 
     //local  -ultrabook
-
+*/
     $usuario_db = "root"; // Usuario de la BD
     $clave_db = ""; // ContraseÃ�Â±a de la BD
     $nombre_db = "is93"; // Nombre de la BD
+/*
 
-*/
     //local  -mac
 
     $usuario_db = "adan"; // Usuario de la BD
     $clave_db = "mandinga"; // ContraseÃ�Â±a de la BD
     $nombre_db = "is93"; // Nombre de la BD
-
+*/
     //conectamos y seleccionamos db
 
     //conectamos y seleccionamos db
