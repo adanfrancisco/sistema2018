@@ -1,3 +1,5 @@
+
+$fecha_hora_actual = date('Y-m-d)
 function crearElemento(elemento, identificador, clase, texto, ruta, valor) {
     item = document.createElement(elemento);
     if (identificador !=='__'){ item.id = identificador; }

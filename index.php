@@ -13,6 +13,7 @@
 					{
 						
 						ingresar();
+
 						location.reload();
 					});
 			

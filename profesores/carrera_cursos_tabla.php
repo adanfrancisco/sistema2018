@@ -15,7 +15,7 @@
       $('#table').basictable();
 
       $('#table-breakpoint').basictable({
-        breakpoint: 768
+        // breakpoint: 768
       });
 
     });
