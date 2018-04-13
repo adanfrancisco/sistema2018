@@ -89,19 +89,24 @@ return (fecha);
 }
 </SCRIPT>
 
+<!--
+    <script language="javascript" src="jquery-1.2.6.min.js"></script>
+-->
+    <script src="miscript.js"></script>
+      <script src="jquery-1.9.1.min.js"></script>
 
 <script language="javascript">
+$(document).ready(function(){
 
 
-
-$("#prueba").load('blanco.php');
+$("#prueba").load('prueba.php');
 
 //selecciono el profesor y se carga el dni y su nombre a la vista
                     $("#profesores").change(function () {
                     $("#profesores option:selected").each(
                         function () {
                         elegido3=$(this).val();
-                        $.post("profe_materia/asociaprofe4.php", { elegido3: elegido3 },
+                        $.post("asociaprofe4.php", { elegido3: elegido3 },
                         function(data){$("#profe").html(data);});});})
 
 //selecciono el curso y me trae las divisiones para ese curso tomadas de CURSO LECTIVO o
@@ -109,7 +114,7 @@ $("#prueba").load('blanco.php');
                     $("#curso option:selected").each(
                         function () {
                         elegido6=$(this).val();
-                        $.post("profe_materia/asociaprofe_division.php", { elegido6: elegido6 },
+                        $.post("asociaprofe_division.php", { elegido6: elegido6 },
                         function(data){$("#division").html(data);});});})
 
 //selecciono el curso y aparecen las materias por carrera y curso
@@ -117,7 +122,7 @@ $("#prueba").load('blanco.php');
                     $("#curso option:selected").each(
                         function () {
                         elegido=$(this).val();
-                        $.post("profe_materia/asociaprofe2.php", { elegido: elegido },
+                        $.post("asociaprofe2.php", { elegido: elegido },
                         function(data){$("#materia").html(data);});})})
 
  //selecciono el curso y aparecen las materias por carrera y curso
@@ -125,7 +130,7 @@ $("#prueba").load('blanco.php');
                     $("#curso option:selected").each(
                         function () {
                         elegido=$(this).val();
-                        $.post("profe_materia/asociaprofe_curso.php", { elegido: elegido },
+                        $.post("asociaprofe_curso.php", { elegido: elegido },
                         function(data){$("#codigo_de_curso").html(data);});})})
 
 
@@ -134,7 +139,7 @@ $("#prueba").load('blanco.php');
                     $("#materia option:selected").each(
                         function () {
                         elegido2=$(this).val();
-                        $.post("profe_materia/asociaprofe_materia_modulo.php", { elegido2: elegido2 },
+                        $.post("asociaprofe_materia_modulo.php", { elegido2: elegido2 },
                         function(data){$("#horas").html(data);});});})
 
 //segun la materia muestra el tipo de materia
@@ -142,7 +147,7 @@ $("#prueba").load('blanco.php');
                     $("#materia option:selected").each(
                         function () {
                         elegido2=$(this).val();
-                        $.post("profe_materia/asociaprofe5.php", { elegido2: elegido2 },
+                        $.post("asociaprofe5.php", { elegido2: elegido2 },
                         function(data){$("#tipo").html(data);});});})
 
 //segun el TIPO de materia carga si tiene grupos
@@ -150,7 +155,7 @@ $("#prueba").load('blanco.php');
                     $("#materia option:selected").each(
                         function () {
                         elegido2=$(this).val();
-                        $.post("profe_materia/asociaprofe_grupo.php", { elegido2: elegido2 },
+                        $.post("asociaprofe_grupo.php", { elegido2: elegido2 },
                         function(data){$("#grupo").html(data);});});})
 
    //TRAE EL GRUPO    *******************************************************************
@@ -158,7 +163,7 @@ $("#prueba").load('blanco.php');
                     $("#grupo option:selected").each(
                         function () {
                         grupo=$(this).val();
-                        $.post("profe_materia/asociaprofe_tabla_grupo.php", { grupo: grupo },
+                        $.post("asociaprofe_tabla_grupo.php", { grupo: grupo },
                         function(data){$("#grupo_traido").html(data);});});})
  //                   *******************************************************************
 
@@ -168,7 +173,7 @@ $("#prueba").load('blanco.php');
                     $("#materia option:selected").each(
                         function () {
                         elegido2=$(this).val();
-                        $.post("profe_materia/asociaprofem.php", { elegido2: elegido2 },
+                        $.post("asociaprofem.php", { elegido2: elegido2 },
                         function(data){$("#codigo_materia").html(data);});});})
 
 //segun la DIVISION carga el NUMERO de CURSO LECTIVO
@@ -176,7 +181,7 @@ $("#prueba").load('blanco.php');
                     $("#division option:selected").each(
                         function () {
                         elegido7=$(this).val();
-                        $.post("profe_materia/asociaprofe7.php", { elegido7: elegido7 },
+                        $.post("asociaprofe7.php", { elegido7: elegido7 },
                         function(data){$("#curso_lectivo").html(data);});});})
 
 //segun la division TRAE en una TABLA toda LA CARGA del CURSO(lectivo)
@@ -184,27 +189,48 @@ $("#prueba").load('blanco.php');
                     $("#division option:selected").each(
                         function () {
                         tabla=$(this).val();
-                        $.post("profe_materia/asociaprofe_tabla.php", { tabla: tabla },
+                        $.post("asociaprofe_tabla.php", { tabla: tabla },
                         function(data){$("#tabla_curso").html(data);});});})
-  //intento desarrollar la busqueda
-
-     
-                        function buscar() {
-                      var textoBusqueda = $("input#busqueda").val();
-                        if (textoBusqueda != "") {
-                          $.post("profe_materia/asociaprofebusca.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
-                              $("#profesores").html(mensaje);
-                           });
-                       } else {
-                          $("#profesores").html('<p>BUSQUE</p>');
-                          };
-                  };                 
 
 
-
+});
 
 
 </script>
+
+
+<script>
+$(document).ready(function() {
+    $("#resultadoBusqueda").html('Busqueda');
+});
+
+function buscar() {
+    var textoBusqueda = $("input#busqueda").val();
+      if (textoBusqueda != "") {
+        $.post("asociaprofebusca.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#profesores").html(mensaje);
+         });
+     } else {
+        $("#profesores").html('<p>BUSQUE</p>');
+        };
+};
+
+
+</script>
+    <link href="datedropper.css" rel="stylesheet" type="text/css" />
+<!-- jQuery lib -->
+<script src="jquery.min.js"></script>
+<script src="datedropper.js"></script>
+<script>
+    $(document).ready(function()
+                      {
+    $("#fecha_alta").dateDropper();
+    $("#suplente_desde").dateDropper();
+    $("#suplente_hasta").dateDropper();
+                        });
+
+</script>
+
 
 
 </head>
@@ -212,17 +238,22 @@ $("#prueba").load('blanco.php');
 
     <?php
     $curso=1;
-include('../acceso_db.php');
+
     if(($_SESSION['usuario_nombre']=='adanaloe')||($_SESSION['nivel']==1)){
 $curso='';$materia='';$codigo_materia='';$curso_lectivo='';$division='';$tipo='';
      $_SESSION['grupo']=null;
     $_SESSION['tipo']=null;
         ?>
 
-       
+        Bienvenido: <a href="perfil.php?id=<?=$_SESSION['usuario_id']?>">(usuario)<strong><?=$_SESSION['usuario_nombre']?></strong></a>
+    <br>
+
+<a href="index.php">Menu Principal</a> |
+    <a href="logout.php">Cerrar Sesión</a>
+        <hr>
 
 
-<form name="agregaprofe" action="asociaprofe0.php">
+<form name="agregaprofe" action="asociaprofe0_s1.php">
     <p>Profesor/a:
 <input type="text" name="busqueda" id="busqueda" value="" placeholder="" maxlength="14" autocomplete="off" onKeyUp="buscar();" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"/>
 <SELECT name="profesores" id="profesores">
@@ -273,8 +304,9 @@ Grupo: <select name="grupo" id="grupo">  </select> <p>
 <br>Codigo Curso Lectivo(division): <label name="curso_lectivo" id="curso_lectivo"></label>
 <br>Codigo CURSO: <label name="codigo_de_curso" id="codigo_de_curso"></label>
 <br>Codigo GRUPO: <label name="grupo_traido" id="grupo_traido"></label>
-<br>Codigo PUEBAAAAAA: <label name="prueba" id="prueba"></label>
-
+<!--
+    <br>Codigo PUEBAAAAAA: <label name="prueba" id="prueba"></label>
+-->
 <?php
         $_SESSION['codigo_materia']=   $codigo_materia;
 
@@ -284,32 +316,41 @@ Grupo: <select name="grupo" id="grupo">  </select> <p>
 
     <p>Situacion de revista:
 <SELECT name="revista" id="revista">
-
-        <?php
+<option value=3>SUPLENTE</option>
+        <?php/*
             $rev="select * from revista";
         if ($resultado = $con->query($rev))
         {
             while ($fila = $resultado->fetch_array(MYSQLI_BOTH))
             {
                 echo'<option value="'.$fila['id_revista'].'">'.$fila['revista_nombre'].'</option>';
+                
             }
         }
         $resultado->close();
-        $hoy = date("j/n/Y");
+        */
+        
+        
         ?>
     </SELECT><label>Fecha de Alta:</label>
 
-    <!-- tag element -->
-<input type="text" name="fecha_alta" id="fecha_alta" size="10" maxlength="10" value=<?php echo$hoy;?>>
+<!-- tag element -->
+        <?php
+        $hoy = date("j/n/Y");
+echo '<input type="text" name="fecha_alta" id="fecha_alta" size="10" maxlength="10" value=" '.$hoy.'">';
+        
+        ?>
 <!-- init dateDropper -->
         <hr>
 
-<!--
-<br>Es Suplencia?:
 
+<!--
+
+<br> <b>Suplencia:</b>
     SI<input type=radio name="suplente" id="fecha_alta" value="s" >
     NO<input type=radio name="suplente" id="suplente" value="n" checked>
-    <div id=#suplente>
+
+        <div id=#suplente>
 
         <br><label>DNI del que esta de licencia:</label>
         <input type="text" name="dnisuplente" value=0>
@@ -317,14 +358,14 @@ Grupo: <select name="grupo" id="grupo">  </select> <p>
         <br><label>HASTA:</label><input type=text name="suplente_hasta" id="suplente_hasta" value=0>
     </div>
    <hr>
-  -->
+-->
 
 
         <!--
 <input name="fecha_alta" type="text" size="10" maxlength="10" onKeyUp = "this.value=formateafecha(this.value);">
   -->
     </p>
-     <input type="submit" value="GRABAR">
+     <input type="submit" value="COMPROBAR">
   </form>
 
     </hr>
