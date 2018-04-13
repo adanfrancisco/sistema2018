@@ -222,7 +222,7 @@ $curso='';$materia='';$codigo_materia='';$curso_lectivo='';$division='';$tipo=''
        
 
 
-<form name="agregaprofe" action="asociaprofe0.php">
+<form name="agregaprofe" action="profe_materia/asociaprofe0.php">
     <p>Profesor/a:
 <input type="text" name="busqueda" id="busqueda" value="" placeholder="" maxlength="14" autocomplete="off" onKeyUp="buscar();" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();"/>
 <SELECT name="profesores" id="profesores">

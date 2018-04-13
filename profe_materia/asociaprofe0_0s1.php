@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('acceso_db.php');
+include('../acceso_db.php');
 ?>
         Bienvenido: <a href="perfil.php?id=<?=$_SESSION['usuario_id']?>">
             (usuario)<strong><?=$_SESSION['usuario_nombre']?></strong></a>

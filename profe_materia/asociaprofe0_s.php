@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    include('acceso_db.php'); // incluímos los datos de conexión a la BD
+    include('../acceso_db.php'); // incluímos los datos de conexión a la BD
 
     if($_SESSION['usuario_nombre']=='adanaloe'){
 $curso='';$materia='';
