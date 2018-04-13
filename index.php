@@ -74,6 +74,7 @@
 
 		<?php
 			include 'js/funciones_js.php';
+      include 'links_js.php';
 		?>
 	</body>
 	<script>

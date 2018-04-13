@@ -23,6 +23,7 @@ GRABAR NUEVO
        ,'".$telcelu."','$email','$libro',$folio,$idcarga,1)";
        //echo $idcarga;
 //echo $sql;
+
 $sqlBusca="select * from alumno where dni=".$dni;
 $encuentra=$con->query($sqlBusca);
     if($encuentra->num_rows==1){
@@ -31,6 +32,7 @@ $encuentra=$con->query($sqlBusca);
         {    echo '<b>'.$fila['apellido'].','.$fila['nombre'].'</b>';
         }
     }else
+    
 $reg = $con->query($sql);
 if($reg) {
                       echo "Datos ingresados correctamente.";

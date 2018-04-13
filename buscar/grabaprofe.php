@@ -24,7 +24,7 @@ $email = isset($_POST['email']) ? (($_POST['email'])) : null;
        $sql=$sql."values(".$dni.",".$legajo.",'".$apellido."','".$nombre."',".$sexo.",'".$domicilio."',".$localidad.",'".$telfijo."','".$telcelu."',0,'".$fechan."','".$fechai."
        ','".$fechad."',$idcarga,'$email',1)";
        //echo $idcarga;
-echo $sql;
+//echo $sql;
 $reg = $con->query($sql);
 if($reg) {
                       echo "Datos ingresados correctamente.";

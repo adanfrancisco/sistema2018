@@ -32,6 +32,7 @@ $("#modifica_clave").on( "click", function() {
                         var ddni=$("#dddni").val();
                         console.log('si'+ddni);
                         //$('#clave').text('quiere cambiar clave a: '+ ddni + '-'+clave_nueva);
+                        
                         $.post("buscar/cambia_clave.php", { xclave_nueva: xclave_nueva, ddni: ddni },
                         function(data){$("#clave").html(data);});
                         });             
@@ -47,6 +48,11 @@ if(isset($_SESSION['nivel'])){
                                // include('cambioclaveusuario.php')
                                 //echo '<br><br><h1><font color="red" >Cambie su clave haciendo click en su nombre</font></h1>';
                                 break;
+
+
+
+
+
                             case 4://preceptor
                                 echo '
                                 <ul id="texto-color">BUSQUEDA </ul>
@@ -61,10 +67,19 @@ if(isset($_SESSION['nivel'])){
                                  ';
 
                                 break;
+
+
+
+
+                                
                             case 3:
                             //alumno
                                 echo 'alumno';
                                 break;
+
+
+
+                                
                             case 2:
                                 //profesor
                                 $_SESSION['mi_dni']=$_SESSION['dni'];
@@ -127,6 +142,13 @@ if(isset($_SESSION['nivel'])){
                 <!-- fin div clave -->
                                     <?php
                                 break;
+
+
+
+
+
+
+
                             case 1:
                             //administrador
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';
@@ -146,7 +168,8 @@ if(isset($_SESSION['nivel'])){
                                 <ul><a href="#" onclick="alta_alumno()">Alta Alumno</a></ul>
 
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>
-                                 <ul><a href="#" onclick="materias()">Materias Por CARRERA</a></ul>
+                                 <ul><a href="#" onclick="materias()">Ver Por CARRERA</a></ul>
+                                 <ul><a href="#" onclick="asocia_profe()">Profesor a Materia</a></ul>
                                  
 
 

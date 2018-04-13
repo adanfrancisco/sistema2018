@@ -36,6 +36,8 @@
                         var xclave_nueva=$("#clave_nueva").val();
                         var ddni=$("#dddni").val();
                         //$('#clave').text('quiere cambiar clave a: '+ ddni + '-'+clave_nueva);
+                        console.log('quiere cambiar clave a: '+ ddni + '-'+xclave_nueva);
+
                         $.post("buscar/cambia_clave.php", { xclave_nueva: xclave_nueva, ddni: ddni },
                         function(data){$("#clave").html(data);});
                         });

@@ -16,8 +16,10 @@ if ($resultado = $con->query($sql)){
 
 	if($resultado->num_rows > 0){
 		//echo 'clave nueva:'.$clave_nueva.'<br>';
-		$sql="UPDATE usuarios set usuario_clave='".md5($clave_nueva)."' where usuario_id=".$usuario;
-
+		$sql="UPDATE usuarios
+inner join profesores 
+on usuarios.`usuario_id`=profesores.`usuario_id` set usuario_clave='".md5($clave_nueva)."' where dni=".$ddni;
+//echo $sql;
 		$reg=$con->query($sql);
 		if($reg) {
                       echo "Se CAMBIO la clave a: ".$clave_nueva.'<br>';;

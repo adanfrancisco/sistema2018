@@ -18,7 +18,7 @@ function novedad()
     $("#abajo").load('buscar/ver_novedad_existe.php');
     $('#reabajo').load("buscar/ver_novedad.php");
 }
-function editaprofe_profesor2()
+function editar_profesor2()
 { 
 
     var xxdni=$("#edita_profe").text();
@@ -89,6 +89,14 @@ function enviar_alumno(){
         $("#abajo").load('alumnos/index.php');
         //$(':input').focus();
         //$("#abajo").load('prueba.html');
+}
+
+function asocia_profe(){
+        $("#reabajo").load('carreras/blanco.php');
+        console.log('asocia_profe');
+        $("#abajo").load('profe_materia/asociaprofe.php');
+
+
 }
 
 

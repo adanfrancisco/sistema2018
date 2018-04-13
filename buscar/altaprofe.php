@@ -92,10 +92,10 @@ required="">
 
 <input name="legajo" id="legajo" class="input-text align-center" style="padding: 0; width: 260px" type="number" id="clave" value="" maxlength="50" placeholder="NRO LEGAJO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';">
 
-<input name="apellido" id="apellido" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="APELLIDO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
+<input name="apellido" id="apellido" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="30" placeholder="APELLIDO" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
 required="">
 
-<input name="nombre" id="nombre" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="10" placeholder="NOMBRE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
+<input name="nombre" id="nombre" class="input-text align-center" style="padding: 0; width: 260px" type="text" id="clave" value="" maxlength="30" placeholder="NOMBRE" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" onfocus="javascript:this.value='';"
 required="" >
 
     
