@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('acceso_db.php'); // incluímos los datos de conexión a la BD
+    include('../acceso_db.php'); // incluímos los datos de conexión a la BD
 
 ?>
 <!doctype html>
@@ -186,7 +186,7 @@ $("#prueba").load('blanco.php');
                         tabla=$(this).val();
                         $.post("profe_materia/asociaprofe_tabla.php", { tabla: tabla },
                         function(data){$("#tabla_curso").html(data);});});})
-  //intento desarrollar la busqueda
+  // desarrollo la busqueda
 
      
                         function buscar() {

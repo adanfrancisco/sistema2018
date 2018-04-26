@@ -170,8 +170,9 @@ if(isset($_SESSION['nivel'])){
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>
                                  <ul><a href="#" onclick="materias()">Ver Por CARRERA</a></ul>
                                  <ul><a href="#" onclick="asocia_profe()">Profesor a Materia</a></ul>
-                                 
+                                <ul><a href="#" onclick="asocia_profe_suplente()">Asociar SUPLENTE a Materia</a></ul>
 
+<ul><a href="#" onclick="asocia_profe_suplente()">Baja de  SUPLENTE </a></ul>
 
                               <!--   <ul>Asociar Profesor a Materia</ul>
 

@@ -95,11 +95,12 @@ function asocia_profe(){
         $("#reabajo").load('carreras/blanco.php');
         console.log('asocia_profe');
         $("#abajo").load('profe_materia/asociaprofe.php');
-
-
 }
-
-
+function asocia_profe_suplente(){
+        $("#reabajo").load('carreras/blanco.php');
+        console.log('asocia_profe_suplente SUPLENTE');
+        $("#abajo").load('profe_materia/asociaprofe_s.php');
+}
   function grabaprofe(){
   var xdni=0;
   if(!$("#dni").val()){

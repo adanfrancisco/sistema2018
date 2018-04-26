@@ -87,14 +87,14 @@ $cupof=0;$reemplazo=0;
     
 //BUSCO A VER SI EXISTE EL REGISTRO QUE DESEO INSERTAR  
 $busca_novedad="select * from mat_pro inner join profesores on mat_pro.profesor=profesores.dni where materia=".$materia." and grupo=".$_SESSION['grupo']." and curso_lectivo_id=".$_SESSION['idcursolectivo'];
-     echo '<br>'.$busca_novedad;
-     echo '<br> el grupo es:'.$_SESSION['grupo'];
+    // echo '<br>'.$busca_novedad;
+    // echo '<br> el grupo es:'.$_SESSION['grupo'];
 $id_matpro='';
 if ($resultado = $con->query($busca_novedad))
-echo '<br>la cantidad es:'.$resultado->num_rows;
+//echo '<br>la cantidad es:'.$resultado->num_rows;
         if($resultado->num_rows>0)
         //if($resultado->num_rows>0)
-        {echo '<br><b>YA EXISTE ESA ASOCIACION DE PROFE A MATERIA/CURSO</b>';
+        {echo '<br><b>YA EXISTE ESA ASOCIACION <br>DE PROFE A MATERIA/CURSO</b>';
          while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
             {$docente= '<font color=red><b>'.$fila['dni'].'-'.$fila['apellido'].', '.$fila['nombre'].'</b></font>';
              
@@ -102,7 +102,7 @@ echo '<br>la cantidad es:'.$resultado->num_rows;
             $docente_a_suplir=$fila['dni'];
             }
          $_SESSION['docente']=$docente_a_suplir;
-         echo '<br><br> EL docente que se a reemplazar es:---->'.$docente;
+         echo '<br><br> EL docente que se a reemplazar es:<br>'.$docente;
          //PARA NO EQUIVOCARME
          
          //REEMPLAZADO $DOCENTE
@@ -124,7 +124,7 @@ echo '<br>la cantidad es:'.$resultado->num_rows;
              
          }
          //fin de la busqueda
-         echo '<br><br> EL REEMPLAZANTE es:----><font color=blue><b>'.$profe.
+         echo '<br><br> EL REEMPLAZANTE es:<br><font color=blue><b>'.$profe.
              '-'.$suplente_apellido.'-'.$suplente_nombre
              .'</b></font>';
          //$resultado->num_rows;  
