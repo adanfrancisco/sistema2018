@@ -101,6 +101,12 @@ function asocia_profe_suplente(){
         console.log('asocia_profe_suplente SUPLENTE');
         $("#abajo").load('profe_materia/asociaprofe_s.php');
 }
+
+function disocia_profe_suplente(){
+        $("#reabajo").load('carreras/cblanco.php');
+        console.log('quita al  SUPLENTE');
+        $("#abajo").load('profe_materia/disociaprofe_s.php');
+}
   function grabaprofe(){
   var xdni=0;
   if(!$("#dni").val()){
