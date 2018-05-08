@@ -24,8 +24,16 @@
                         $.post("profe_materia/disocia_profe_materia.php", { materia: materia },
                         function(data){$("#codigo_materia").html(data);});
                         
+                        $.post("profe_materia/disocia_profe_suplido.php", { materia: materia },
+                        function(data){$("#suplido").html(data);});                        
+                        $.post("profe_materia/disocia_profe_suplido_dni.php", { materia: materia },
+                        function(data){$("#suplido_dni").html(data);});                        
+
                         $.post("profe_materia/disocia_profe_suplente.php", { materia: materia },
                         function(data){$("#suplente").html(data);});                        
+                        $.post("profe_materia/disocia_profe_suplido_dni.php", { materia: materia },
+                        function(data){$("#suplente_dni").html(data);});                        
+                        
                         });})
 
 </script>
@@ -44,7 +52,7 @@ $curso='';$materia='';$codigo_materia='';$curso_lectivo='';$division='';$tipo=''
 <form name="agregaprofe" action="profe_materia/asociaprofe0_s.php">
     <p>Materia:
 
-<SELECT name="materia_suplente" id="materia_suplente">
+<label name="codigo_materia" id="codigo_materia"></label><SELECT name="materia_suplente" id="materia_suplente">
         <option>MATERIA</option>
         <?php
             $consulta="select carrera_nombre,descripcion, materia, materia_nombre ,grupo, profesor, profesores.apellido,profesores.nombre , reemplazo from mat_pro_novedades 
@@ -68,15 +76,12 @@ $curso='';$materia='';$codigo_materia='';$curso_lectivo='';$division='';$tipo=''
         $resultado->close();
 
         ?>
-    </SELECT>
+        </SELECT>
 
-    <p>SUPLENTE:
-        <select name="suplente" id="suplente">
-    
-        </select>
+<p>SUPLIDO:<label name="suplido_dni" id="suplido_dni"></label><select name="suplido" id="suplido"> </select>
+<p>SUPLENTE:<label name="suplente_dni" id="suplente_dni"></label><select name="suplente" id="suplente"></select>
 
-<br>Codigo Profesor: <label name="profee" id="profe"></label>
-<br>Codigo Materia: <label name="codigo_materia" id="codigo_materia"></label>
+
 <!--
     <br>Codigo PUEBAAAAAA: <label name="prueba" id="prueba"></label>
 -->

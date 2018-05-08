@@ -22,8 +22,8 @@ inner join curso_lectivo on mat_pro.curso_lectivo_id=curso_lectivo.idcursolectiv
 inner join curso on curso.idcurso=curso_lectivo.curso
 inner join carrera on curso.carrera_id=carrera.id_carrera
 inner join materia on mat_pro.materia=materia.id_materia  
-inner join profesores on profesores.dni=mat_pro.profesor
-#inner join profesores on profesores.dni=mat_pro.reemplazo
+#inner join profesores on profesores.dni=mat_pro.profesor
+inner join profesores on profesores.dni=mat_pro.reemplazo
 where reemplazo <>0 and activo=1  and materia=".$valor."
 ORDER BY materia";
 echo $consultacurso;
@@ -34,7 +34,7 @@ echo $consultacurso;
          {
             while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
             {
-                $options='<option value="'.$fila['materia'].'"> '.$fila['apellido'].','.$fila['nombre'].'</option>';
+                $options='<option value="'.$fila['profesor'].'"> '.$fila['apellido'].','.$fila['nombre'].'</option>';
                 echo $options;  
             }
         }      
