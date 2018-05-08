@@ -103,7 +103,7 @@ function asocia_profe_suplente(){
 }
 
 function disocia_profe_suplente(){
-        $("#reabajo").load('carreras/cblanco.php');
+        $("#reabajo").load('carreras/blanco.php');
         console.log('quita al  SUPLENTE');
         $("#abajo").load('profe_materia/disociaprofe_s.php');
 }
