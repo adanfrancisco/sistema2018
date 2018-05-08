@@ -31,7 +31,7 @@
 
                         $.post("profe_materia/disocia_profe_suplente.php", { materia: materia },
                         function(data){$("#suplente").html(data);});                        
-                        $.post("profe_materia/disocia_profe_suplido_dni.php", { materia: materia },
+                        $.post("profe_materia/disocia_profe_suplente_dni.php", { materia: materia },
                         function(data){$("#suplente_dni").html(data);});                        
                         
                         });})
@@ -40,7 +40,7 @@
 
 </head>
 <body>
-Baja a SUPLENTE
+<h2>Baja a SUPLENTE</h2>
     <?php
     $curso=1;
 
@@ -70,7 +70,7 @@ $curso='';$materia='';$codigo_materia='';$curso_lectivo='';$division='';$tipo=''
             while ($fila = $resultado->fetch_array(MYSQLI_BOTH))
 
             {echo $resultado->num_rows;
-                echo'<OPTION    VALUE="'.$fila['materia'].'">'.$fila['materia_nombre'].' '.$fila['profesores.apellido'].'</OPTION>    ';
+                echo'<OPTION    VALUE="'.$fila['materia'].'"> <b>'.$fila['carrera_nombre'].'</b> '.$fila['materia_nombre'].'</OPTION>    ';
             }
         }
         $resultado->close();
