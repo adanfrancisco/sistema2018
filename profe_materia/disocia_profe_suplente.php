@@ -33,7 +33,7 @@ echo $consultacurso;
          {
             while ($fila = $resultado->fetch_array(MYSQLI_BOTH)) 
             {
-                $options='<option value="'.$fila['materia'].'"> '.$fila['apellido'].','.$fila['nombre'].'</option>';
+                $options='<option value="'.$fila['profesor'].'"> '.$fila['apellido'].','.$fila['nombre'].'</option>';
                 echo $options;  
             }
         }      

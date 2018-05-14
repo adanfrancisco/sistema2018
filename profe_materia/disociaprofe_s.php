@@ -11,8 +11,6 @@
 
 <script language="javascript">
 
-
-
 //$("#prueba").load('prueba.php');
 
 //selecciono el profesor y se carga el dni y su nombre a la vista
@@ -20,21 +18,30 @@
                     $("#materia_suplente option:selected").each(
                         function () {
                         materia=$(this).val();
-                        
+                        //console.log('Al cambiar de materia, cambian los profes');
                         $.post("profe_materia/disocia_profe_materia.php", { materia: materia },
                         function(data){$("#codigo_materia").html(data);});
-                        
                         $.post("profe_materia/disocia_profe_suplido.php", { materia: materia },
                         function(data){$("#suplido").html(data);});                        
                         $.post("profe_materia/disocia_profe_suplido_dni.php", { materia: materia },
                         function(data){$("#suplido_dni").html(data);});                        
-
                         $.post("profe_materia/disocia_profe_suplente.php", { materia: materia },
                         function(data){$("#suplente").html(data);});                        
                         $.post("profe_materia/disocia_profe_suplente_dni.php", { materia: materia },
                         function(data){$("#suplente_dni").html(data);});                        
+                        });})
+//cambio el suplente y tiene q cambiar el dni
+$("#suplente").change(function () {
+                    $("#suplente option:selected").each(
+                        function () {
+                        quien=$(this).val();
+                        console.log('cambian los profes:' + quien);
+
+                        $.post("profe_materia/disocia_profe_suplente_cambia_dni.php", { quien: quien },
+                        function(data){$("#suplente_dni").html(data);});
                         
                         });})
+
 
 </script>
 
@@ -80,17 +87,11 @@ $curso='';$materia='';$codigo_materia='';$curso_lectivo='';$division='';$tipo=''
 
 <p>SUPLIDO:<label name="suplido_dni" id="suplido_dni"></label><select name="suplido" id="suplido"> </select>
 <p>SUPLENTE:<label name="suplente_dni" id="suplente_dni"></label><select name="suplente" id="suplente"></select>
-
-
-<!--
-    <br>Codigo PUEBAAAAAA: <label name="prueba" id="prueba"></label>
--->
-
   </form>
 
     </hr>
  <?php
- //echo 'Materia: '.$_SESSION['materia'].' - curso:'.$_SESSION['curso'].' - modulos: - '.$_SESSION['modulo'];
+ 
 }else{
 echo 'USTED no es ADMINISTRADOR <br><a href="index.php">Volver</a>';
 }
