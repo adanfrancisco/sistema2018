@@ -27,5 +27,6 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
   -->
-<script src="js/jquery-3.2.1.js"></script> 
-<!--  <script src="carreras/css/jquery.basictable.min.js"></script> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+<!-- <script src="js/jquery-3.2.1.js"></script>  -->
+ <!--  <script src="carreras/css/jquery.basictable.min.js"></script> -->

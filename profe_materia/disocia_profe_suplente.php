@@ -23,8 +23,7 @@ inner join curso on curso.idcurso=curso_lectivo.curso
 inner join carrera on curso.carrera_id=carrera.id_carrera
 inner join materia on mat_pro.materia=materia.id_materia  
 inner join profesores on profesores.dni=mat_pro.profesor
-where reemplazo <>0 and activo=1  and materia=".$valor."
-ORDER BY materia";
+where reemplazo <>0 and activo=1  and materia=".$valor;
 echo $consultacurso;
 ?>
 <select name="" id="">
