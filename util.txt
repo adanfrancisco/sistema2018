@@ -43,3 +43,15 @@ if($reg) {
 mysql -u root -p
 
  SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+
+function getAge($birthday) {
+  $birth = strtotime($birthday);
+  $now = strtotime('now');
+ 
+  $age = ($now - $birth) / 31536000;
+ 
+  return floor($age);
+}
+ 
+echo "Actualmente tengo ". getAge('21 november 1987') ." años";
