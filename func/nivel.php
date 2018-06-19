@@ -144,11 +144,6 @@ if(isset($_SESSION['nivel'])){
                                 break;
 
 
-
-
-
-
-
                             case 1:
                             //administrador
                                 //echo '<h1><font color="red" >Hola, su nivel de usuario es: '.$_SESSION['nivel'].' </font></h1>';
