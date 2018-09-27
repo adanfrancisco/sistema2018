@@ -17,7 +17,7 @@
                         //$('#licencia').text(ddni);
                         $.post("buscar/nuevo_usuario_por_id.php", { usuario_nombre: usuario_nombre, usuario_clave:usuario_clave, ddni: ddni },
                         function(data){$("#usuario_div").html(data);});        
-             
+
              });
 
 //DESARROLLO DE CLAVE
@@ -32,7 +32,7 @@ $("#modifica_clave").on( "click", function() {
                         var ddni=$("#dddni").val();
                         console.log('si'+ddni);
                         //$('#clave').text('quiere cambiar clave a: '+ ddni + '-'+clave_nueva);
-                        
+
                         $.post("buscar/cambia_clave.php", { xclave_nueva: xclave_nueva, ddni: ddni },
                         function(data){$("#clave").html(data);});
                         });             
@@ -63,15 +63,10 @@ if(isset($_SESSION['nivel'])){
                                 <ul id="texto-color">Relacion Usuario/Persona</ul>
 
                                  <ul><a href="#" onclick="materias()">Materias Por CARRERA</a></ul>
-                                 <ul><a href="#" onclick="alta_alumno()">Alta Alumno</a></ul>
                                  ';
 
                                 break;
 
-
-
-
-                                
                             case 3:
                             //alumno
                                 echo 'alumno';

@@ -9,18 +9,19 @@
 					$("#usuarios").load('func/nivel.php');
                     
 					//este anda bien
-					$("#ingreso").click(function(event) 
+					$("#ingreso").click(function(event)
 					{
-						
-						ingresar();
 
-						location.reload();
+						ingresar();
+                        location.reload();
+
 					});
-			
+
+
 			}	);
 
 		</script>
-		
+
 <title>IS93-GESTION</title>
 	</head>
 	<body>
@@ -33,7 +34,7 @@
 
 				<div id="login">
                         <?php 
-                        
+
 						session_start();
 							if(empty($_SESSION['usuario_nombre'])) {
 							include('login.php');

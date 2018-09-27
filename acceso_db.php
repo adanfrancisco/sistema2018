@@ -1,7 +1,7 @@
 <?php
 //$hojaestilo="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css";
 $host_db = "localhost"; // Host de la BD
- /*
+
  
     //remoto
     $usuario_db = "c0990267_adan"; // Usuario de la BD
@@ -9,7 +9,7 @@ $host_db = "localhost"; // Host de la BD
     $nombre_db = "c0990267_is93"; // Nombre de la BD
 
     //local  -ultrabook
-/*/
+/*
     $usuario_db = "root"; // Usuario de la BD
     $clave_db = ""; // ContraseÃ�Â±a de la BD
     $nombre_db = "is93"; // Nombre de la BD
